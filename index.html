@@ -64,6 +64,218 @@
       <div id="main" class="wrapper">
         <div id="primary" class="site-content"><div id="content" role="main">
   
+    <article id="post-JVM学习笔记-1" class="post-JVM学习笔记-1 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title">
+      <a class="article-title" href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">JVM学习笔记</a>
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/" data-id="ckg34cth90000hkv62tru5ajt" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="JVM学习笔记"><a href="#JVM学习笔记" class="headerlink" title="JVM学习笔记"></a>JVM学习笔记</h1><ol>
+<li><p>JVM主体结构</p>
+<ol>
+<li>类加载器子系统</li>
+<li>运行时数据区</li>
+<li>执行引擎</li>
+</ol>
+</li>
+<li><p>类加载子系统</p>
+<ol>
+<li><p>作用:类加载器将class文件加载到虚拟机的内存</p>
+</li>
+<li><p>类加载过程</p>
+<ol>
+<li>加载:在硬盘上查找并通过IO流写入字节码文件,(会将源代码编译打包成一个jar包)</li>
+<li>链接:执行下面三个步骤<ol>
+<li>验证:校验字节码文件的正确性</li>
+<li>准备:给类的静态变量分配内存,并赋予默认值 0,null等</li>
+<li>解析:将符号引用替换为直接引用,该阶段会将静态方法替换为指向数据所存内存的指针或者句柄.这是所谓的静态链接过程(类加载阶段完成);动态链接是程序运行期间完成的符合引用替换为直接引用.<ol>
+<li>符号引用:class文件中,将一些单词,方法等转化为#num的格式代表</li>
+<li>直接引用:当加载到内存中时,会将符合引用转化为地址,同一份符号引用在不同的虚拟机加载时转化成的直接引用可能是不同的</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>初始化:对类的静态变量初始化为指定的值(自己赋的值),执行静态代码块</li>
+<li>使用:将class传入到运行区</li>
+<li>卸载:运行完毕.</li>
+</ol>
+</li>
+<li><p>类加载器</p>
+<ol>
+<li>启动类加载器:加载核心类库 bin目录下</li>
+<li>扩展类加载器:加载扩展目录中的jar包 斌目录下的ext目录下的jar包</li>
+<li>应用程序类加载器:自己写的class文件</li>
+<li>自定义加载器:用户自定义路径下的jar包</li>
+</ol>
+</li>
+<li><p>双亲委派机制</p>
+<p>​    当加载问件时,应用程序类不会直接加载文件;</p>
+<p>应用程序类–(委托)–&gt;扩展类加载器加载文件–(委托)–&gt;启动类加载器,</p>
+<p>当启动类加载器找不到问件时,会打回请求给扩展类加载器,当扩展类加载器找不到文件时,会打回请求给应用程序类加载器加载文件。</p>
+</li>
+<li><p>双亲委派机制优点</p>
+<ol>
+<li>沙箱安全机制:防止核心类库被篡改</li>
+<li>避免类的重复加载:保证被加载类的唯一性</li>
+</ol>
+</li>
+</ol>
+<p>​    </p>
+</li>
+<li><p>.JVM运行时数据区</p>
+<ol>
+<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\JVM结构图.png"></p>
+</li>
+<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\方法区.png"></p>
+<p>存储.class文件,包括里面的常量,静态变量,类元信息的。方法去的空间属于直接内存,不是JVM分配的内存。</p>
+</li>
+<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\线程栈.png"></p>
+<ol>
+<li>局部变量:存储局部变量</li>
+<li>操作数栈:存储临时数据</li>
+<li>动态链接</li>
+<li>方法出口:将方法的返回值返回到main栈帧里的局部变量里</li>
+<li>操作数栈十数据的临时中转站,当给变量赋值时或者参与运算时,都会先将数据存储到操作数栈,然后在进行赋值或者参与运算。参与运算的到的结构再次进入到操作数栈,然后在赋值给局部变量里的变量.</li>
+</ol>
+</li>
+<li><p>本地方法栈</p>
+<ol>
+<li>存储底层方法,C语言写的房发直接与 底层交互</li>
+<li>当使用时.也会加载到线程中</li>
+</ol>
+</li>
+<li><p>堆内存</p>
+<ol>
+<li><img src="C:\Users\13948\Desktop\Java笔记\截屏\堆内存.png"></li>
+<li>存储创建出来的对象</li>
+<li>GC的工作区.如上图所示<ol>
+<li>垃圾处理流程如下<ol>
+<li>Eden满触发minorGC</li>
+<li>Eden–&gt;from</li>
+<li>Eden+from–&gt;to</li>
+<li>Eden+to–&gt;from</li>
+<li>15次之后Eden+from+to–&gt;老年代</li>
+<li>老年代满触发FullGC并报出OOM</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>逃逸分析</p>
+<ol>
+<li>JVM三种运行模式<ol>
+<li>解释模式:执行一行字节码,就编译一次机器码</li>
+<li>编译模式:先将字节码全部编译成为机器码,然后依次执行完毕</li>
+<li>混合模式:依然使用解释模式执行,但是对于一些”热点”代码采用编译模式执行,JVM一般采用混合模式执行</li>
+</ol>
+</li>
+<li>对象逃逸分析<ol>
+<li>就是分析对象作用域</li>
+<li>当对象在一个方法中创建后,可能是作为参数被其他方法调用,或者作为返回值被返回出去。</li>
+<li>当对象明确只使用一次,且栈内存空间足够时,JVM会将对象创建在栈内存中,随着方法出栈,减少GC次数</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>JVM内存分配和回收策略</p>
+<ol>
+<li>小容量对象有一个年龄计数器，存活15次之后会将其放入老年代</li>
+<li>大容量对象如果新生代可以容纳，则先放入新生代，当放不下之后将其放入老年代（可以设置将超过指定大小的对象直接放老年代）</li>
+<li>动态年龄分配：当minorGC n次时已经将年轻代一般空键占满，则直接将之后产生的对象放入老年代。</li>
+<li>老年代空间分配担保机制:</li>
+</ol>
+</li>
+<li><p>判断对象是否可以被回收</p>
+<ol>
+<li>引用计数法(已过时)</li>
+<li>可达性分析算法 寻找GCroot并将链接的对象标记为有用对象,找不到的GCroot的对象则为无用对象GCroot根一般为栈 ,本地方法栈以及方法区中</li>
+<li>有时有引用的对象也可能会被回收 <ol>
+<li>强引用:普通的对象</li>
+<li>软引用:被SoftReference软引用类型的对象包裹。一般不会被回收,当GC之后内存不足以存放新对象才会被回收</li>
+<li>弱引用:被WeakReference弱引用类型的对象包裹。GC时会直接回收掉</li>
+<li>虚引用:也成为了幽灵引用或者幻影引用.基本不会被使用</li>
+</ol>
+</li>
+<li>finalize()方法判断对象最终是否存活 <ol>
+<li>当对象没有与GCroots链接的引用链时,判断该对象是否被Finalize()方法覆盖标记,如果被此方法标记,则只要重新与任意对象的引用链链接即可</li>
+<li>否则就会被回收</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>判断类对象是否可以被回收</p>
+<ol>
+<li>类的对象实例都已经被回收</li>
+<li>类的加载器被回收</li>
+<li>在其他地方没有类的引用,不能同过反射构建类的对象实例</li>
+<li>上面三个条件必须全部满足,这个类才能被回收</li>
+</ol>
+</li>
+<li><p>垃圾收集算法</p>
+<ol>
+<li>标记清除算法</li>
+<li>复制算法(新生代)</li>
+<li>标记整理算法(老年代)</li>
+<li>分代收集算法(目前JVM使用的主流)</li>
+</ol>
+</li>
+<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\垃圾收集器.png"></p>
+<ol>
+<li>Serial:串行收集器,是一条单线程的收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\Serial收集器.png"></li>
+<li>ParNew:Serial的多线程版本,搭配CMS使用(公司常用)<img src="C:\Users\13948\Desktop\Java笔记\截屏\ParNew收集器.png"></li>
+<li>Parallel Scavenge收集器![](C:\Users\13948\Desktop\Java笔记\截屏\Parallel Scavenge收集器.png)</li>
+<li>CMS收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS收集器.png"><ol>
+<li>CMS缺点<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS缺点.png"></li>
+<li>CMS相关参数<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS相关参数.png"></li>
+</ol>
+</li>
+<li>G1垃圾收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集器.png"><ol>
+<li>垃圾收集过程<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集过程.png"></li>
+<li>垃圾收集分类<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集分类.png"></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">
+    <time datetime="2020-10-10T03:27:46.000Z" class="entry-date">
+        2020-10-10
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+
+
+
+
+  
     <article id="post-网络编程" class="post-网络编程 post type-post status-publish format-standard hentry">
     <!---->
 
@@ -1106,48 +1318,6 @@
 
 
   
-    <article id="post-我自己的第一篇博客" class="post-我自己的第一篇博客 post type-post status-publish format-standard hentry">
-    <!---->
-
-      <header class="entry-header">
-        
-        
-  
-    <h1 class="entry-title">
-      <a class="article-title" href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我自己的第一篇博客</a>
-    </h1>
-  
-
-        
-        <div class="comments-link">
-            
-            <a href="javascript:void(0);" data-url="http://example.com/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckg0zdh0l0001iov6acnnc62c" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
-        </div><!-- .comments-link -->
-      </header><!-- .entry-header -->
-
-    <div class="entry-content">
-      
-        
-      
-    </div><!-- .entry-content -->
-
-    <footer class="entry-meta">
-    <a href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-    <time datetime="2020-10-08T13:28:53.000Z" class="entry-date">
-        2020-10-08
-    </time>
-</a>
-    
-    
-    </footer>
-</article>
-
-
-
-
-
-
-  
   
     <nav id="pagination">
       <nav id="page-nav">
@@ -1177,6 +1347,10 @@
       <ul>
         
           <li>
+            <a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/">JVM学习笔记</a>
+          </li>
+        
+          <li>
             <a href="/2020/10/10/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">(no title)</a>
           </li>
         
@@ -1190,10 +1364,6 @@
         
           <li>
             <a href="/2020/10/10/%E6%A1%88%E4%BE%8B/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/10/String%E6%80%BB%E7%BB%93/">(no title)</a>
           </li>
         
       </ul>
