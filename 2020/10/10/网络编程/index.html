@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="网络编程网络编程三要素协议：网络通信的规则
+IP：电脑的唯一标识
+端口：软件的标识
+UDP协议高效快捷，客户端与服务器不需要建立链接。两者不知道对方状态，数据传输不安全。
+TCP协议客户端与服务经过三次握手建立连接之后，通过客户端的IO流Socket对象传输数据，数据传输安全，不会丢失数据。
+TCP" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="网络编程网络编程三要素协议：网络通信的规则 IP：电脑的唯一标识 端口：软件的标识 UDP协议高效快捷，客户端与服务器不需要建立链接。两者不知道对方状态，数据传输不安全。 TCP协议客户端与服务经过三次握手建立连接之后，通过客户端的IO流Socket对象传输数据，数据传输安全，不会丢失数据。 TCP通信的客户端​            向服务器发送链接请求，给服务器发送数据，读取服务器回写的数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/10/10/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="网络编程网络编程三要素协议：网络通信的规则 IP：电脑的唯一标识 端口：软件的标识 UDP协议高效快捷，客户端与服务器不需要建立链接。两者不知道对方状态，数据传输不安全。 TCP协议客户端与服务经过三次握手建立连接之后，通过客户端的IO流Socket对象传输数据，数据传输安全，不会丢失数据。 TCP通信的客户端​            向服务器发送链接请求，给服务器发送数据，读取服务器回写的数据">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/网络编程/TCP文件上传案例.png">
+<meta property="article:published_time" content="2020-10-10T03:22:17.702Z">
+<meta property="article:modified_time" content="2020-10-04T15:43:57.145Z">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/13948/Desktop/Java笔记/截屏/网络编程/TCP文件上传案例.png">
+  
+  
+    <link rel="icon" href="/css/images/favicon.ico">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="Hexo" rel="home">Hexo</a>
+      </h1>
+      
+        <h2 class="site-description hitokoto"></h2>
+        <script type="text/javascript" src="https://v1.hitokoto.cn/?encode=js"></script>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-网络编程" class="post-网络编程 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        <div class="comments-link">
+            
+            <a href="javascript:void(0);" data-url="http://example.com/2020/10/10/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" data-id="ckg345gbr0008csv66d1i1cn1" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <h1 id="网络编程"><a href="#网络编程" class="headerlink" title="网络编程"></a>网络编程</h1><h2 id="网络编程三要素"><a href="#网络编程三要素" class="headerlink" title="网络编程三要素"></a>网络编程三要素</h2><p><strong>协议</strong>：网络通信的规则</p>
+<p><strong>IP</strong>：电脑的唯一标识</p>
+<p><strong>端口</strong>：软件的标识</p>
+<h2 id="UDP协议"><a href="#UDP协议" class="headerlink" title="UDP协议"></a>UDP协议</h2><p>高效快捷，客户端与服务器不需要建立链接。两者不知道对方状态，数据传输不安全。</p>
+<h2 id="TCP协议"><a href="#TCP协议" class="headerlink" title="TCP协议"></a>TCP协议</h2><p>客户端与服务经过三次握手建立连接之后，通过客户端的IO流Socket对象传输数据，数据传输安全，不会丢失数据。</p>
+<h3 id="TCP通信的客户端"><a href="#TCP通信的客户端" class="headerlink" title="TCP通信的客户端"></a>TCP通信的客户端</h3><p>​            向服务器发送链接请求，给服务器发送数据，读取服务器回写的数据</p>
+<p>1.标识客户端的类：Socket套接字，包含IP地址和端口号</p>
+<p>2.创建套接字对象：Socket（IP,端口号）；</p>
+<p>3.使用Socket对象的getOutputStream获取输出网络字节流对象</p>
+<p>4.使用网络字节流对象中的write（）方法给服务器发送数据</p>
+<p>5.使用Socket对象的getInputStream获取输入网络字节流对象</p>
+<p>6.使用网络字节输入流对象中的read（）方法，读取服务器回写的数据</p>
+<p>7.关闭Socket对象</p>
+<p>注意事项：</p>
+<p>​        客户端与服务端交互数据的IO流不能自己创建，只能使用Socket对象获取</p>
+<p>​        当Socket对象创建的时候就会与服务端建立3次握手，</p>
+<p>​                    如果服务器没有启动，就会抛出异常</p>
+<p>​                    服务器启动就可以进行交互</p>
+<h3 id="TCP通信的服务端"><a href="#TCP通信的服务端" class="headerlink" title="TCP通信的服务端"></a>TCP通信的服务端</h3><p>​                接收客户端的请求，读取客户端发送的数据，给客户端会写数据</p>
+<p>1.表示服务器的类：ServerSocket套接字，</p>
+<p>2.创建ServerSocket对象：ServerSocket（端口号）并通过accept（）方法获取客户端的Socket对象</p>
+<p>3.使用Socket对象的getInputStream获取输入网络字节流对象</p>
+<p>4.使用网络字节输入流对象中的read（）方法，读取服务器回写的数据</p>
+<p>5.使用Socket对象的getOutputStream获取输出网络字节流对象</p>
+<p>6.使用网络字节流对象中的write（）方法给服务器发送数据</p>
+<ol start="7">
+<li>关闭Socket对象</li>
+</ol>
+<h3 id="文件上传优化"><a href="#文件上传优化" class="headerlink" title="文件上传优化"></a>文件上传优化</h3><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\网络编程\TCP文件上传案例.png"></p>
+<p>1.上述代码完成后，程序不会停止，需要在while{write}，输出数据结束调用Socket对象的shutDownOutput（）方法</p>
+<p>2.自定义文件名防止文件被覆盖，域名+当前毫秒值+随机数+文件后缀</p>
+<p>3.让服务器一直开着并实现多线程</p>
+<p>​        开启死循环并在其中创建线程</p>
+<p>while（true）{</p>
+<p>​        new Thread（new Runnable（）</p>
+<p>​                    run（）{</p>
+<p>​                    try{</p>
+<p>​                                服务器对象ServerSocket.accept（）方法（包括之后的代码）</p>
+<p>​                    socket.close();socket需要关闭</p>
+<p>​                        }catct(IOexceptin e){</p>
+<p>​                            e.print…</p>
+<p>​                        }</p>
+<p>​        ）</p>
+<p>}</p>
+<p>//server.close()不必关闭</p>
+<p>​        </p>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2020/10/10/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+    <time datetime="2020-10-10T03:22:17.702Z" class="entry-date">
+        2020-10-10
+    </time>
+</a>
+    
+    
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+    
+        <span class="nav-next"><a href="/2020/10/10/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2020/10/10/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/10/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/10/%E9%9B%86%E5%90%88%E6%95%B0%E7%BB%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%B9%E9%87%8F%E6%B1%87%E6%80%BB/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/10/%E6%A1%88%E4%BE%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/10/10/String%E6%80%BB%E7%BB%93/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  
+    
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2020 John Doe
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/js/share.js'];</script>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>

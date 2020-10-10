@@ -4,6 +4,18 @@
   <meta charset="utf-8">
   
   
+  <meta name="description" content="String总结
+创建
+String s = “abc”;
+String s = new String(“abc”);
+String s = new String(Char[] chars);
+String s = new String();
+
+
+字符串比较
+String s = “abc”;
+s." />
+  
 
   
   
@@ -11,15 +23,17 @@
   
   
   
-  <title>我自己的第一篇博客 | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="我自己的第一篇博客">
-<meta property="og:url" content="http://example.com/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/index.html">
+  <meta name="description" content="String总结 创建 String s &#x3D; “abc”; String s &#x3D; new String(“abc”); String s &#x3D; new String(Char[] chars); String s &#x3D; new String();   字符串比较 String s &#x3D; “abc”; s.equals(“abc”);返回boolean类型     字符串遍历 String s &#x3D; “ab">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/2020/10/10/String%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="String总结 创建 String s &#x3D; “abc”; String s &#x3D; new String(“abc”); String s &#x3D; new String(Char[] chars); String s &#x3D; new String();   字符串比较 String s &#x3D; “abc”; s.equals(“abc”);返回boolean类型     字符串遍历 String s &#x3D; “ab">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-08T13:28:53.000Z">
-<meta property="article:modified_time" content="2020-10-08T13:28:53.758Z">
+<meta property="article:published_time" content="2020-10-10T03:22:17.679Z">
+<meta property="article:modified_time" content="2020-09-08T10:43:05.694Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -64,35 +78,73 @@
 </header>
 
       <div id="main" class="wrapper">
-        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-我自己的第一篇博客" class="post-我自己的第一篇博客 post type-post status-publish format-standard hentry">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-String总结" class="post-String总结 post type-post status-publish format-standard hentry">
     <!---->
 
       <header class="entry-header">
         
-        
-  
-    <h1 class="entry-title article-title">
-      我自己的第一篇博客
-    </h1>
-  
-
-        
         <div class="comments-link">
             
-            <a href="javascript:void(0);" data-url="http://example.com/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckg0zdh0l0001iov6acnnc62c" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://example.com/2020/10/10/String%E6%80%BB%E7%BB%93/" data-id="ckg345gbl0002csv61rai026h" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
     <div class="entry-content">
       
-        
+        <h1 id="String总结"><a href="#String总结" class="headerlink" title="String总结"></a>String总结</h1><ol>
+<li><h2 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h2><ol>
+<li>String s = “abc”;</li>
+<li>String s = new String(“abc”);</li>
+<li>String s = new String(Char[] chars);</li>
+<li>String s = new String();</li>
+</ol>
+</li>
+<li><h2 id="字符串比较"><a href="#字符串比较" class="headerlink" title="字符串比较"></a>字符串比较</h2><ol>
+<li>String s = “abc”;</li>
+<li>s.equals(“abc”);返回boolean类型  </li>
+</ol>
+</li>
+<li><h2 id="字符串遍历"><a href="#字符串遍历" class="headerlink" title="字符串遍历"></a>字符串遍历</h2><ol>
+<li>String s = “abc”;</li>
+<li>S.toCharArray();返回一个字符数组</li>
+<li>for循环遍历字符数组</li>
+<li>使用s.charAt()方法和s.length()方法获取字符串每个索引上的字符</li>
+</ol>
+</li>
+<li><h2 id="统计字符次数"><a href="#统计字符次数" class="headerlink" title="统计字符次数"></a>统计字符次数</h2><ol>
+<li>字符串遍历</li>
+<li>使用if判断字符范围</li>
+<li>计数器++</li>
+</ol>
+</li>
+<li><h2 id="手机号屏蔽"><a href="#手机号屏蔽" class="headerlink" title="手机号屏蔽"></a>手机号屏蔽</h2><ol>
+<li>s.substring(索引);切割字符串</li>
+<li>拼接字符串,中间+”****”+;</li>
+</ol>
+</li>
+<li><h2 id="敏感词替换"><a href="#敏感词替换" class="headerlink" title="敏感词替换"></a>敏感词替换</h2><ol>
+<li>s.replace(目标字符/串,替换字符/串);</li>
+<li>可以使用链式编程</li>
+</ol>
+</li>
+<li><h2 id="切割字符串"><a href="#切割字符串" class="headerlink" title="切割字符串"></a>切割字符串</h2><ol>
+<li><p>s.split(分隔符);按照分隔符切割字符串</p>
+</li>
+<li><p>得到字符串数组</p>
+</li>
+<li><p>遍历字符串数组进行操作</p>
+</li>
+</ol>
+</li>
+</ol>
+
       
     </div><!-- .entry-content -->
 
     <footer class="entry-meta">
-    <a href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
-    <time datetime="2020-10-08T13:28:53.000Z" class="entry-date">
-        2020-10-08
+    <a href="/2020/10/10/String%E6%80%BB%E7%BB%93/">
+    <time datetime="2020-10-10T03:22:17.679Z" class="entry-date">
+        2020-10-10
     </time>
 </a>
     
@@ -105,10 +157,10 @@
 <nav class="nav-single">
     <h3 class="assistive-text">文章导航</h3>
     
-        <span class="nav-previous"><a href="/2020/10/10/git%20config%20user/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
+        <span class="nav-previous"><a href="/2020/10/10/%E6%A1%88%E4%BE%8B/" rel="prev"><span class="meta-nav">←</span> (no title)</a></span>
     
     
-        <span class="nav-next"><a href="/2020/10/08/hello-world/" rel="next">Hello World <span class="meta-nav">→</span></a></span>
+        <span class="nav-next"><a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next">(no title) <span class="meta-nav">→</span></a></span>
     
 </nav><!-- .nav-single -->
 
