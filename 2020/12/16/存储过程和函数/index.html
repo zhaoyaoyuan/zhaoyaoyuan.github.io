@@ -5,13 +5,17 @@
   
 
   
-  <title>归档: 2020/10 | zyy&#39;s bolg</title>
+  <title>zyy&#39;s bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="存储过程和函数1事先经过编译并存储在数据库中的一段sql语句指令  存储过程和函数的好处 提高代码的复用性 减少数据在服务器上的传输 减少代码层面的业务处理问题  存储过程和函数的区别 函数必须有返回值 存储过程可以没有返回值  变量 定义局部变量:declare name varchar(8) default ‘贺礼霄’ 定义临时变量:set @name &#x3D; ‘贺礼霄’; 给变量赋值: set">
+<meta property="og:type" content="article">
 <meta property="og:title" content="zyy&#39;s bolg">
-<meta property="og:url" content="http://example.com/archives/2020/10/index.html">
+<meta property="og:url" content="http://example.com/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="zyy&#39;s bolg">
+<meta property="og:description" content="存储过程和函数1事先经过编译并存储在数据库中的一段sql语句指令  存储过程和函数的好处 提高代码的复用性 减少数据在服务器上的传输 减少代码层面的业务处理问题  存储过程和函数的区别 函数必须有返回值 存储过程可以没有返回值  变量 定义局部变量:declare name varchar(8) default ‘贺礼霄’ 定义临时变量:set @name &#x3D; ‘贺礼霄’; 给变量赋值: set">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-12-16T12:49:30.917Z">
+<meta property="article:modified_time" content="2020-11-05T04:36:07.144Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -62,78 +66,57 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="archive-article-date">
-  <time datetime="2020-10-10T04:42:12.000Z" itemprop="datePublished">10月 10</time>
+        <section id="main"><article id="post-存储过程和函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/" class="article-date">
+  <time datetime="2020-12-16T12:49:30.917Z" itemprop="datePublished">2020-12-16</time>
 </a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JVM学习笔记</a>
-    </h1>
-  
-
-    </header>
+    
   </div>
-</article>
-  
+  <div class="article-inner">
     
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  <time datetime="2020-10-08T13:28:53.000Z" itemprop="datePublished">10月 8</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我自己的第一篇博客</a>
-    </h1>
-  
+        <h2 id="存储过程和函数"><a href="#存储过程和函数" class="headerlink" title="存储过程和函数"></a>存储过程和函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事先经过编译并存储在数据库中的一段sql语句指令</span><br></pre></td></tr></table></figure>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/10/08/hello-world/" class="archive-article-date">
-  <time datetime="2020-10-08T13:14:07.916Z" itemprop="datePublished">10月 8</time>
-</a>
+<h2 id="存储过程和函数的好处"><a href="#存储过程和函数的好处" class="headerlink" title="存储过程和函数的好处"></a>存储过程和函数的好处</h2><ul>
+<li>提高代码的复用性</li>
+<li>减少数据在服务器上的传输</li>
+<li>减少代码层面的业务处理问题</li>
+</ul>
+<h2 id="存储过程和函数的区别"><a href="#存储过程和函数的区别" class="headerlink" title="存储过程和函数的区别"></a>存储过程和函数的区别</h2><ul>
+<li>函数必须有返回值</li>
+<li>存储过程可以没有返回值</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
+<li>定义局部变量:declare name varchar(8) default ‘贺礼霄’</li>
+<li>定义临时变量:set @name = ‘贺礼霄’;</li>
+<li>给变量赋值: set 变量名 = 值 ||select 值 into 变量 from 表 where [条件]</li>
+</ul>
+
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/10/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-    </header>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/" data-id="ckirex07j00062sv6bjok1owk" class="article-share-link">Share</a>
+      
+      
+    </footer>
   </div>
-</article>
+  
+    
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">上传图片</div>
+    </a>
   
+</nav>
 
+  
+</article>
 
 </section>
         

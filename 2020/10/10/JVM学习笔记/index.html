@@ -14,22 +14,22 @@
 <meta property="og:site_name" content="zyy&#39;s bolg">
 <meta property="og:description" content="1. JVM主体结构 类加载子系统  运行时数据区  执行系统 类加载子系统 作用 ​    类加载器将类文件加载到虚拟机的内存  类加载过程  加载:在硬盘上查找并通过IO流写入字节码文件,(会将源代码编译打包成一个jar包) 链接:执行下面三个步骤 验证:校验字节码文件的正确性 准备:给类的静态变量分配内存,并赋予默认值 0,null等 解析:将符号引用替换为直接引用,该阶段会将静态方法替换为">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/方法区.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/线程栈.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/堆内存.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/Serial收集器.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/ParNew收集器.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/CMS收集器.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/CMS缺点.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/CMS相关参数.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/G1垃圾收集器.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/G1垃圾收集过程.png">
-<meta property="og:image" content="c:/Users/13948/Desktop/Java笔记/截屏/G1垃圾收集分类.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/方法区.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/线程栈.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/堆内存.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/Serial收集器.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/ParNew收集器.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/CMS收集器.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/CMS缺点.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/CMS相关参数.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/G1垃圾收集器.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/G1垃圾收集过程.png">
+<meta property="og:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/G1垃圾收集分类.png">
 <meta property="article:published_time" content="2020-10-10T04:42:12.000Z">
 <meta property="article:modified_time" content="2020-10-10T04:55:43.907Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="c:/Users/13948/Desktop/Java笔记/截屏/方法区.png">
+<meta name="twitter:image" content="http://example.com/.com//Users/13948/Desktop/Java笔记/截屏/方法区.png">
   
     <link rel="alternate" href="/atom.xml" title="zyy&#39;s bolg" type="application/atom+xml">
   
@@ -151,10 +151,10 @@
 <h2 id="运行时数据区"><a href="#运行时数据区" class="headerlink" title="运行时数据区"></a>运行时数据区</h2><ol>
 <li><ol>
 <li></li>
-<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\方法区.png"></p>
+<li><p><img src="/.com//Users\13948\Desktop\Java笔记\截屏\方法区.png"></p>
 <p>存储.class文件,包括里面的常量,静态变量,类元信息的。方法去的空间属于直接内存,不是JVM分配的内存。</p>
 </li>
-<li><p><img src="C:\Users\13948\Desktop\Java笔记\截屏\线程栈.png"></p>
+<li><p><img src="/.com//Users\13948\Desktop\Java笔记\截屏\线程栈.png"></p>
 <ol>
 <li>局部变量:存储局部变量</li>
 <li>操作数栈:存储临时数据</li>
@@ -171,7 +171,7 @@
 </li>
 <li><p>堆内存</p>
 <ol>
-<li><img src="C:\Users\13948\Desktop\Java笔记\截屏\堆内存.png"></li>
+<li><img src="/.com//Users\13948\Desktop\Java笔记\截屏\堆内存.png"></li>
 <li>存储创建出来的对象</li>
 <li>GC的工作区.如上图所示<ol>
 <li>垃圾处理流程如下<ol>
@@ -248,17 +248,17 @@
 </ol>
 </li>
 <li><ol>
-<li>Serial:串行收集器,是一条单线程的收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\Serial收集器.png"></li>
-<li>ParNew:Serial的多线程版本,搭配CMS使用(公司常用)<img src="C:\Users\13948\Desktop\Java笔记\截屏\ParNew收集器.png"></li>
+<li>Serial:串行收集器,是一条单线程的收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\Serial收集器.png"></li>
+<li>ParNew:Serial的多线程版本,搭配CMS使用(公司常用)<img src="/.com//Users\13948\Desktop\Java笔记\截屏\ParNew收集器.png"></li>
 <li>Parallel Scavenge收集器![](C:\Users\13948\Desktop\Java笔记\截屏\Parallel Scavenge收集器.png)</li>
-<li>CMS收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS收集器.png"><ol>
-<li>CMS缺点<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS缺点.png"></li>
-<li>CMS相关参数<img src="C:\Users\13948\Desktop\Java笔记\截屏\CMS相关参数.png"></li>
+<li>CMS收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS收集器.png"><ol>
+<li>CMS缺点<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS缺点.png"></li>
+<li>CMS相关参数<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS相关参数.png"></li>
 </ol>
 </li>
-<li>G1垃圾收集器<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集器.png"><ol>
-<li>垃圾收集过程<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集过程.png"></li>
-<li>垃圾收集分类<img src="C:\Users\13948\Desktop\Java笔记\截屏\G1垃圾收集分类.png"></li>
+<li>G1垃圾收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集器.png"><ol>
+<li>垃圾收集过程<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集过程.png"></li>
+<li>垃圾收集分类<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集分类.png"></li>
 </ol>
 </li>
 </ol>
@@ -270,7 +270,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckirdyre00001z0v64sft15fl" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckirex07e00012sv6bbbi37si" class="article-share-link">Share</a>
       
       
     </footer>
@@ -328,6 +328,14 @@
       <ul>
         
           <li>
+            <a href="/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">上传图片</a>
+          </li>
+        
+          <li>
             <a href="/2020/12/16/day12IO%E6%B5%8102/">(no title)</a>
           </li>
         
@@ -337,14 +345,6 @@
         
           <li>
             <a href="/2020/12/16/HTML%E7%AC%94%E8%AE%B0/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/12/16/web%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95%E9%A2%98/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JVM学习笔记</a>
           </li>
         
       </ul>
