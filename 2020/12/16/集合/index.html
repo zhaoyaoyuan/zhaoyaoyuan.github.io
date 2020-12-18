@@ -5,15 +5,39 @@
   
 
   
-  <title>zyy&#39;s bolg</title>
+  <title>集合 | zyy&#39;s bolg</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zyy&#39;s bolg">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="Day08集合重点 ​    集合体系结构 单列集合:list ArrayList,LinkedList, ​        set HashSet TreeSet ​        queue  双列集合:map HashMap LinkedHashMap TreeMap ​        table Hashtable ​        tree ​    集合的常见操作 增,删,清空,判断是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集合">
+<meta property="og:url" content="http://example.com/2020/12/16/%E9%9B%86%E5%90%88/index.html">
 <meta property="og:site_name" content="zyy&#39;s bolg">
+<meta property="og:description" content="Day08集合重点 ​    集合体系结构 单列集合:list ArrayList,LinkedList, ​        set HashSet TreeSet ​        queue  双列集合:map HashMap LinkedHashMap TreeMap ​        table Hashtable ​        tree ​    集合的常见操作 增,删,清空,判断是">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/.com//01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/01_%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E7%25BB%2593%25E6%259E%2584%25E5%259B%25BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/02_%25E4%25BA%258C%25E5%258F%2589%25E6%259F%25A5%25E6%2589%25BE%25E6%25A0%2591%25E7%25BB%2593%25E6%259E%2584%25E5%259B%25BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/03_%25E4%25BA%258C%25E5%258F%2589%25E6%259F%25A5%25E6%2589%25BE%25E6%25A0%2591%25E5%2592%258C%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%25AF%25B9%25E6%25AF%2594%25E7%25BB%2593%25E6%259E%2584%25E5%259B%25BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/04_%25E4%25BA%258C%25E5%258F%2589%25E6%259F%25A5%25E6%2589%25BE%25E6%25A0%2591%25E6%25B7%25BB%25E5%258A%25A0%25E8%258A%2582%25E7%2582%25B9%25E8%25A7%2584%25E5%2588%2599.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/05_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%25B7%25A6%25E6%2597%258B01.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/05_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%25B7%25A6%25E6%2597%258B02.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/06_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%258F%25B3%25E6%2597%258B01.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/06_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%258F%25B3%25E6%2597%258B02.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/07_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%2592%258C%25E4%25BA%258C%25E5%258F%2589%25E6%259F%25A5%25E6%2589%25BE%25E6%25A0%2591%25E5%25AF%25B9%25E6%25AF%2594%25E7%25BB%2593%25E6%259E%2584%25E5%259B%25BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/08_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%25B7%25A6%25E5%25B7%25A6.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/09_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%25B7%25A6%25E5%258F%25B3.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/10_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%258F%25B3%25E5%258F%25B3.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day09_%25E9%259B%2586%25E5%2590%258802/%25E7%25AC%2594%25E8%25AE%25B0/img/11_%25E5%25B9%25B3%25E8%25A1%25A1%25E4%25BA%258C%25E5%258F%2589%25E6%25A0%2591%25E5%258F%25B3%25E5%25B7%25A6.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day10_%25E9%259B%2586%25E5%2590%258803/%25E7%25AC%2594%25E8%25AE%25B0/img/12_%25E7%25BA%25A2%25E9%25BB%2591%25E6%25A0%2591%25E7%25BB%2593%25E6%259E%2584%25E5%259B%25BE.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day10_%25E9%259B%2586%25E5%2590%258803/%25E7%25AC%2594%25E8%25AE%25B0/img/13_%25E7%25BA%25A2%25E9%25BB%2591%25E6%25A0%2591%25E6%25B7%25BB%25E5%258A%25A0%25E8%258A%2582%25E7%2582%25B9%25E9%25A2%259C%25E8%2589%25B2.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day10_%25E9%259B%2586%25E5%2590%258803/%25E7%25AC%2594%25E8%25AE%25B0/img/14_JKD8%25E4%25BB%25A5%25E5%2589%258D%25E5%2593%2588%25E5%25B8%258C%25E8%25A1%25A8.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day10_%25E9%259B%2586%25E5%2590%258803/%25E7%25AC%2594%25E8%25AE%25B0/img/15_JKD8%25E4%25BB%25A5%25E5%2590%258E%25E5%2593%2588%25E5%25B8%258C%25E8%25A1%25A8.png">
+<meta property="og:image" content="http://example.com/.com//%25E8%25B5%2584%25E6%2596%2599/%25E7%25AC%25AC%25E4%25BA%258C%25E9%2598%25B6%25E6%25AE%25B5%25E8%25AF%25BE%25E7%25A8%258B/day11_%25E9%259B%2586%25E5%2590%258804/%25E7%25AC%2594%25E8%25AE%25B0/img/01_Stream%25E6%25B5%2581%25E6%2580%259D%25E6%2583%25B3.png">
+<meta property="article:published_time" content="2020-12-16T12:37:18.000Z">
+<meta property="article:modified_time" content="2020-12-18T05:51:14.492Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/.com//01_%E9%9B%86%E5%90%88%E7%B1%BB%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%9B%BE.png">
   
     <link rel="alternate" href="/atom.xml" title="zyy&#39;s bolg" type="application/atom+xml">
   
@@ -62,87 +86,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-存储过程和函数" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/" class="article-date">
-  <time datetime="2020-12-16T12:49:30.917Z" itemprop="datePublished">2020-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="存储过程和函数"><a href="#存储过程和函数" class="headerlink" title="存储过程和函数"></a>存储过程和函数</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">事先经过编译并存储在数据库中的一段sql语句指令</span><br></pre></td></tr></table></figure>
-
-<h2 id="存储过程和函数的好处"><a href="#存储过程和函数的好处" class="headerlink" title="存储过程和函数的好处"></a>存储过程和函数的好处</h2><ul>
-<li>提高代码的复用性</li>
-<li>减少数据在服务器上的传输</li>
-<li>减少代码层面的业务处理问题</li>
-</ul>
-<h2 id="存储过程和函数的区别"><a href="#存储过程和函数的区别" class="headerlink" title="存储过程和函数的区别"></a>存储过程和函数的区别</h2><ul>
-<li>函数必须有返回值</li>
-<li>存储过程可以没有返回值</li>
-</ul>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
-<li>定义局部变量:declare name varchar(8) default ‘贺礼霄’</li>
-<li>定义临时变量:set @name = ‘贺礼霄’;</li>
-<li>给变量赋值: set 变量名 = 值 ||select 值 into 变量 from 表 where [条件]</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/16/%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B%E5%92%8C%E5%87%BD%E6%95%B0/" data-id="ckituy2140006vgv61dl7hrhp" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-上传图片" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" class="article-date">
-  <time datetime="2020-12-16T12:37:18.000Z" itemprop="datePublished">2020-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/">上传图片</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" data-id="ckituy2130004vgv69jphfghf" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-集合" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2020/12/16/%E9%9B%86%E5%90%88/" class="article-date">
   <time datetime="2020-12-16T12:37:18.000Z" itemprop="datePublished">2020-12-16</time>
@@ -155,8 +99,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/16/%E9%9B%86%E5%90%88/">集合</a>
+    <h1 class="article-title" itemprop="name">
+      集合
     </h1>
   
 
@@ -1307,478 +1251,28 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-HTML笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/16/HTML%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2020-12-16T04:49:30.697Z" itemprop="datePublished">2020-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:html笔记</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h1 id="HTML笔记"><a href="#HTML笔记" class="headerlink" title="HTML笔记"></a>HTML笔记</h1><h2 id="B-S架构详解"><a href="#B-S架构详解" class="headerlink" title="B/S架构详解"></a>B/S架构详解</h2><ul>
-<li><p>资源分类</p>
-<pre><code>         1. 静态资源
-                  1. 使用静态开发技术发布的资源
-                  2. 特点:
-                           1. 所有用户访问,得到的结果都是一样的
-                           2. 如果用户请求的是静态资源,那么服务器会直接将静态资源发送给浏览器.浏览器中内置了静态资源的解析引擎,可以展示静态资源    
-         2. 动态资源
-                  1. 使用动态网页及时发布的资源
-                  2. 特点:所有用户访问,得到的结果肯恩不一样
-                  3. 如果用户访问的是动态资源,那么服务器 会将动态资源转换为静态资源,然后发送给浏览器
-      3. 静态资源
-            1. HTML:用于搭建基础网页,展示页面的内容
-            2. CSS:又能够与美化页面,布局页面
-            3. JavaScript:控制页面的元素.让页面有一些动态效果</code></pre>
-</li>
-</ul>
-<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><pre><code> 1. 概念:是最基础的网页开发语言
- * Hyper Text Mrkup Language 超文本标记语言
-   * 超文本:
-     * 超文本 使用超链接的方式,将各种不同空间的文字信息组织在一起的网状文本
-   * 标记语言:
-     * 有标签构成的语言.如 html xml
-     * 标记语言不是编程语言
-2. 快速入门
-
-* 语法:
-  * HTML文档后缀名 .HTML或者.tml
-  * 标签分为:
-    * 围堵标签:成对出现的标签
-    * 自闭和标签:特殊标签 如换行标签 &lt;br/&gt;
-  * 标签可以嵌套:但要注意不能交叉嵌套
-  * 在开始标签可以定义属性.属性是由键值对组成的,值需要使用单引号括起来
-  * html的标签不区分大小写,但是建议使用小写
-3. 标签学习
-    1. 文件标签:构成html最基本的标签
-    2. 文本标签:和文本有关的标签
-    3. 图片标签:
-    4. 列表标签
-    5. 链接标签
-    6. 表格标签:</code></pre>
-<p>​            </p>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-<!--POST和GET的区别：POST相对GET更加安全，并且没有大小限制-->
-<form action="#" method="post">
-    帐号 <input type="text" placeholder="请输入帐号" name="username"> <br>
-    密码 <input type="password" placeholder="请输入密码" name="password"> <br>
-    <button type="submit">登陆</button>
-</form>
-</body>
-</html>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/16/HTML%E7%AC%94%E8%AE%B0/" data-id="ckituy20w0000vgv6aub5c9gc" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-web核心面试题" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/12/16/web%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95%E9%A2%98/" class="article-date">
-  <time datetime="2020-12-16T04:49:24.549Z" itemprop="datePublished">2020-12-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">title:web核心面试题</span><br></pre></td></tr></table></figure>
-
-
-
-<h1 id="web核心面试题"><a href="#web核心面试题" class="headerlink" title="web核心面试题"></a>web核心面试题</h1><ol>
-<li><p>servlet什么时候创建</p>
-<ol>
-<li>当浏览器第一次访问时有tomcat创建</li>
-<li>可以通过配置文件<load-on-startup></load-on-startup></li>
-</ol>
-</li>
-<li><p>servlet生命周期三个方法</p>
-<ol>
-<li>init</li>
-<li>service</li>
-<li>destory</li>
-</ol>
-</li>
-<li><p>如何解决请求和响应乱码</p>
-<ol>
-<li>request.setCharacterEncoding(“utf-8”)</li>
-<li>respones.setContextType(“text/html;character=utf-8”)</li>
-</ol>
-</li>
-<li><p>session和cookie有什么区别</p>
-<ol>
-<li><p>服务端 session     客户端 cookie</p>
-</li>
-<li><p>无大小限制            4kb 最多50个</p>
-</li>
-<li><p>相对安全                 不安全</p>
-</li>
-<li><p>session基于cookie </p>
-<p>​    session创建成功后会以cookie形式将sessionid存入JSESSIONID</p>
-</li>
-</ol>
-</li>
-<li><p>jsp内置对象?</p>
-<ol>
-<li>域对象<ol>
-<li>pagecontext 可以获取其他8个域对象</li>
-<li>request</li>
-<li>session</li>
-<li>servletcontext</li>
-</ol>
-</li>
-<li>out</li>
-<li>page</li>
-<li>config</li>
-<li>response</li>
-<li>exception</li>
-</ol>
-</li>
-<li><p>el表达式四个域对象</p>
-<ol>
-<li>requestscope</li>
-<li>pageScore</li>
-<li>sessionscope</li>
-<li>ApplicationScope</li>
-</ol>
-</li>
-</ol>
-<p>​    </p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/12/16/web%E6%A0%B8%E5%BF%83%E9%9D%A2%E8%AF%95%E9%A2%98/" data-id="ckituy2120003vgv60ryc6vs2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-JVM学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" class="article-date">
-  <time datetime="2020-10-10T04:42:12.000Z" itemprop="datePublished">2020-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2020/12/16/%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          上传图片
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">JVM学习笔记</a>
-    </h1>
   
+    <a href="/2020/12/16/HTML%E7%AC%94%E8%AE%B0/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-JVM主体结构"><a href="#1-JVM主体结构" class="headerlink" title="1. JVM主体结构"></a>1. JVM主体结构</h1><ol>
-<li><p>类加载子系统</p>
-</li>
-<li><p>运行时数据区</p>
-</li>
-<li><p>执行系统</p>
-<h2 id="类加载子系统"><a href="#类加载子系统" class="headerlink" title="类加载子系统"></a>类加载子系统</h2><ol>
-<li><p>作用</p>
-<p>​    类加载器将类文件加载到虚拟机的内存</p>
-</li>
-<li><p>类加载过程</p>
-<ol>
-<li>加载:在硬盘上查找并通过IO流写入字节码文件,(会将源代码编译打包成一个jar包)</li>
-<li>链接:执行下面三个步骤<ol>
-<li>验证:校验字节码文件的正确性</li>
-<li>准备:给类的静态变量分配内存,并赋予默认值 0,null等</li>
-<li>解析:将符号引用替换为直接引用,该阶段会将静态方法替换为指向数据所存内存的指针或者句柄.这是所谓的静态链接过程(类加载阶段完成);动态链接是程序运行期间完成的符合引用替换为直接引用.<ol>
-<li>符号引用:class文件中,将一些单词,方法等转化为#num的格式代表</li>
-<li>直接引用:当加载到内存中时,会将符合引用转化为地址,同一份符号引用在不同的虚拟机加载时转化成的直接引用可能是不同的</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>初始化:对类的静态变量初始化为指定的值(自己赋的值),执行静态代码块</li>
-<li>使用:将class传入到运行区</li>
-<li>卸载:运行完毕.</li>
-</ol>
-</li>
-<li><p>类加载器</p>
-<ol>
-<li>启动类加载器:加载核心类库 bin目录下</li>
-<li>扩展类加载器:加载扩展目录中的jar包 斌目录下的ext目录下的jar包</li>
-<li>应用程序类加载器:自己写的class文件</li>
-<li>自定义加载器:用户自定义路径下的jar包</li>
-</ol>
-</li>
-<li><p>双亲委派机制</p>
-<p>​    当加载问件时,应用程序类不会直接加载文件;</p>
-<p>应用程序类–(委托)–&gt;扩展类加载器加载文件–(委托)–&gt;启动类加载器,</p>
-<p>当启动类加载器找不到问件时,会打回请求给扩展类加载器,当扩展类加载器找不到文件时,会打回请求给应用程序类加载器加载文件。</p>
-</li>
-<li><p>双亲委派机制优点</p>
-<ol>
-<li>沙箱安全机制:防止核心类库被篡改</li>
-<li>避免类的重复加载:保证被加载类的唯一性</li>
-</ol>
-</li>
-</ol>
-<h2 id="运行时数据区"><a href="#运行时数据区" class="headerlink" title="运行时数据区"></a>运行时数据区</h2><ol>
-<li><ol>
-<li></li>
-<li><p><img src="/.com//Users\13948\Desktop\Java笔记\截屏\方法区.png"></p>
-<p>存储.class文件,包括里面的常量,静态变量,类元信息的。方法去的空间属于直接内存,不是JVM分配的内存。</p>
-</li>
-<li><p><img src="/.com//Users\13948\Desktop\Java笔记\截屏\线程栈.png"></p>
-<ol>
-<li>局部变量:存储局部变量</li>
-<li>操作数栈:存储临时数据</li>
-<li>动态链接</li>
-<li>方法出口:将方法的返回值返回到main栈帧里的局部变量里</li>
-<li>操作数栈十数据的临时中转站,当给变量赋值时或者参与运算时,都会先将数据存储到操作数栈,然后在进行赋值或者参与运算。参与运算的到的结构再次进入到操作数栈,然后在赋值给局部变量里的变量.</li>
-</ol>
-</li>
-<li><p>本地方法栈</p>
-<ol>
-<li>存储底层方法,C语言写的房发直接与 底层交互</li>
-<li>当使用时.也会加载到线程中</li>
-</ol>
-</li>
-<li><p>堆内存</p>
-<ol>
-<li><img src="/.com//Users\13948\Desktop\Java笔记\截屏\堆内存.png"></li>
-<li>存储创建出来的对象</li>
-<li>GC的工作区.如上图所示<ol>
-<li>垃圾处理流程如下<ol>
-<li>Eden满触发minorGC</li>
-<li>Eden–&gt;from</li>
-<li>Eden+from–&gt;to</li>
-<li>Eden+to–&gt;from</li>
-<li>15次之后Eden+from+to–&gt;老年代</li>
-<li>老年代满触发FullGC并报出OOM</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>逃逸分析</p>
-<ol>
-<li>JVM三种运行模式<ol>
-<li>解释模式:执行一行字节码,就编译一次机器码</li>
-<li>编译模式:先将字节码全部编译成为机器码,然后依次执行完毕</li>
-<li>混合模式:依然使用解释模式执行,但是对于一些”热点”代码采用编译模式执行,JVM一般采用混合模式执行</li>
-</ol>
-</li>
-<li>对象逃逸分析<ol>
-<li>就是分析对象作用域</li>
-<li>当对象在一个方法中创建后,可能是作为参数被其他方法调用,或者作为返回值被返回出去。</li>
-<li>当对象明确只使用一次,且栈内存空间足够时,JVM会将对象创建在栈内存中,随着方法出栈,减少GC次数</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>JVM内存分配和回收策略</p>
-<ol>
-<li>小容量对象有一个年龄计数器，存活15次之后会将其放入老年代</li>
-<li>大容量对象如果新生代可以容纳，则先放入新生代，当放不下之后将其放入老年代（可以设置将超过指定大小的对象直接放老年代）</li>
-<li>动态年龄分配：当minorGC n次时已经将年轻代一般空键占满，则直接将之后产生的对象放入老年代。</li>
-<li>老年代空间分配担保机制:</li>
-</ol>
-</li>
-<li><p>判断对象是否可以被回收</p>
-<ol>
-<li>引用计数法(已过时)</li>
-<li>可达性分析算法 寻找GCroot并将链接的对象标记为有用对象,找不到的GCroot的对象则为无用对象GCroot根一般为栈 ,本地方法栈以及方法区中</li>
-<li>有时有引用的对象也可能会被回收 <ol>
-<li>强引用:普通的对象</li>
-<li>软引用:被SoftReference软引用类型的对象包裹。一般不会被回收,当GC之后内存不足以存放新对象才会被回收</li>
-<li>弱引用:被WeakReference弱引用类型的对象包裹。GC时会直接回收掉</li>
-<li>虚引用:也成为了幽灵引用或者幻影引用.基本不会被使用</li>
-</ol>
-</li>
-<li>finalize()方法判断对象最终是否存活 <ol>
-<li>当对象没有与GCroots链接的引用链时,判断该对象是否被Finalize()方法覆盖标记,如果被此方法标记,则只要重新与任意对象的引用链链接即可</li>
-<li>否则就会被回收</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>判断类对象是否可以被回收</p>
-<ol>
-<li>类的对象实例都已经被回收</li>
-<li>类的加载器被回收</li>
-<li>在其他地方没有类的引用,不能同过反射构建类的对象实例</li>
-<li>上面三个条件必须全部满足,这个类才能被回收</li>
-</ol>
-</li>
-<li><p>垃圾收集算法</p>
-<ol>
-<li>标记清除算法</li>
-<li>复制算法(新生代)</li>
-<li>标记整理算法(老年代)</li>
-<li>分代收集算法(目前JVM使用的主流)</li>
-</ol>
-</li>
-<li><ol>
-<li>Serial:串行收集器,是一条单线程的收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\Serial收集器.png"></li>
-<li>ParNew:Serial的多线程版本,搭配CMS使用(公司常用)<img src="/.com//Users\13948\Desktop\Java笔记\截屏\ParNew收集器.png"></li>
-<li>Parallel Scavenge收集器![](C:\Users\13948\Desktop\Java笔记\截屏\Parallel Scavenge收集器.png)</li>
-<li>CMS收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS收集器.png"><ol>
-<li>CMS缺点<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS缺点.png"></li>
-<li>CMS相关参数<img src="/.com//Users\13948\Desktop\Java笔记\截屏\CMS相关参数.png"></li>
-</ol>
-</li>
-<li>G1垃圾收集器<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集器.png"><ol>
-<li>垃圾收集过程<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集过程.png"></li>
-<li>垃圾收集分类<img src="/.com//Users\13948\Desktop\Java笔记\截屏\G1垃圾收集分类.png"></li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/10/JVM%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" data-id="ckituy2100001vgv61u0x6tso" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
-    <article id="post-我自己的第一篇博客" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" class="article-date">
-  <time datetime="2020-10-08T13:28:53.000Z" itemprop="datePublished">2020-10-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">我自己的第一篇博客</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/08/%E6%88%91%E8%87%AA%E5%B7%B1%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/" data-id="ckituy2130005vgv62h7b0mhq" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/10/08/hello-world/" class="article-date">
-  <time datetime="2020-10-08T13:14:07.916Z" itemprop="datePublished">2020-10-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/08/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/10/08/hello-world/" data-id="ckituy2110002vgv607mfb08n" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
 
 </section>
         
