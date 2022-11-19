@@ -140,10 +140,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/archives/2022/">
+  <link rel="canonical" href="http://yoursite-url/cn/review/面试--消息队列/">
   <title>
     
-      talkink
+      消息队列 - talkink
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -240,7 +240,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">HOME</a>
+            <a href="/">首页</a>
           </li>
 
           
@@ -250,7 +250,7 @@
           <li>
             <a href="/about/">
               
-              ABOUT
+              关于
               
               
             </a>
@@ -261,7 +261,7 @@
           <li>
             <a href="/archive/">
               
-              ARCHIVES
+              归档
               
               
             </a>
@@ -272,7 +272,7 @@
           <li>
             <a href="/tags/">
               
-              TAGS
+              标签
               
               
             </a>
@@ -283,7 +283,7 @@
           <li>
             <a href="/categories/">
               
-              CATEGORIES
+              分类
               
               
             </a>
@@ -294,36 +294,14 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>SEARCH</a>
+              <span class="search-icon"></span>搜索</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          <!-- LangSelect start -->
-          <!-- LangSelect -->
-<li>
-  <a id="lang-select-label"><i class="fa fa-globe"></i>
-    <span>
-      English
-    </span>
-    <select id="lang-select" data-canonical="archives/2022/index.html">
-      
-      
-      <option value="en"  selected >
-        English
-      </option>
-      
-      <option value="cn" >
-        简体中文
-      </option>
-      
-    </select>
-  </a>
-</li>
-
-          <!-- LangSelect end -->
+          
           
           
         </ul>
@@ -385,9 +363,9 @@
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/img/header_img/archive_bg2.jpg');
     }
     header.intro-header {
-       /*page*/
-        background-image: var(--intro-header-background-image-url-page);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/img/header_img/archive_bg2.jpg'); */
+       /*post*/
+        background-image: var(--intro-header-background-image-url-post);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io'); */
       
     }
 
@@ -410,10 +388,40 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="site-heading">
-            <h1>talkink</h1>
-            <!--<hr class="small">-->
-            <span class="subheading">python是世界上最好的语言.java</span>
+          <div class="post-heading">
+            <div class="tags">
+              
+            </div>
+            <h1>消息队列</h1>
+            <h2 class="subheading"></h2>
+            <span class="meta">
+              Posted by talkink on
+              2022-11-13
+            </span>
+
+
+            
+            <!-- WordCount start -->
+            <div class="blank_box"></div>
+            <span class="meta">
+              Estimated Reading Time <span class="post-count">7</span> Minutes
+            </span>
+            <div class="blank_box"></div>
+            <span class="meta">
+              Words <span class="post-count">2k</span> In Total
+            </span>
+            <div class="blank_box"></div>
+            <!-- WordCount end -->
+            
+            
+            <!-- 不蒜子统计 start -->
+            <span class="meta" id="busuanzi_container_page_pv">
+              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
+            </span>
+            <!-- 不蒜子统计 end -->
+            
+
+
           </div>
           
         </div>
@@ -454,263 +462,453 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Main Content -->
-<div class="container">
-  <div class="row">
-    
+		<!-- Modify by Yu-Hsuan Yen -->
+<!-- Post Content -->
+<article>
+  <div class="container">
+    <div class="row">
+      <!-- Post Container -->
+      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-    <!-- USE SIDEBAR -->
-    <!-- Post Container -->
-    <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
+        <h1>消息队列</h1>
+<h3 id="项目哪里用到消息队列"><strong>项目哪里用到消息队列</strong></h3>
+<ul>
+<li>场景一：在基础平台项目里面，我们要对接一个功能，是接入快递查询的，由于我们系统不直接对外网暴露服务，所以需要靠门户系统对接快递鸟的推送服务。快递鸟通过门户提供的回调接口将快递轨迹推送给门户，门户会将消息发送到DDMQ,之后我通过订阅DDMQ，去消费mq的消息，存入我们数据库并展示到页面上。</li>
+<li>场景二：在接力棒系统中，我们系统主要模型是，通过上游系统的接口，拉取到上游系统的数据，存入我们系统；之后客户在我们页面发起数据移交流程，审批通过之后，在通知下游系统移交具体对应的数据。在通知下游系统这步骤，用到了MQ。我们将消息通过mq告知下游系统，下游系统在通过mq反馈给我们移交结果。</li>
+</ul>
+<h3 id="在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？"><strong>在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？</strong></h3>
+<ul>
+<li>
+<p>上游系统有多个，并不能统一要求他们都使用mq</p>
+</li>
+<li>
+<p>上游系统认为mq对代码侵入性有点强，不想增加系统的复杂度</p>
+</li>
+</ul>
+<h3 id="在第二阶段，为什么要使用mq"><strong>在第二阶段，为什么要使用mq</strong></h3>
+<ul>
+<li>主要是为了保证近实时性，不需要下游系统通过定时任务拉取数据</li>
+<li>第二是解耦合：直接使用http调用的话，下游系统的错误可能引起我们系统的不稳定甚至服务雪崩</li>
+<li>第三是异步：下游系统的耗时并不会影响我们系统的性能</li>
+<li>第四是应对下游系统服务变更，下游系统如果不想对接那他直接取消我们mq的订阅就可以了；或者下游系统变更域名、ip之类的，也不需要我们更改配置</li>
+</ul>
+<h3 id="mq异步和线程异步有什么区别？"><strong>mq异步和线程异步有什么区别？</strong></h3>
+<ul>
+<li>
+<p>少量并发情况下，两者其实区别不大</p>
+</li>
+<li>
+<p>在大并发场景下，多线程异步会让机器CPU急速增高，服务性能急速下降；使用mq的话，会有流量削峰的作用，是的我们服务平滑运行。</p>
+</li>
+</ul>
+<h3 id="消息堆积"><strong>消息堆积</strong></h3>
+<ol>
+<li>看消息是否有用，如果是可以丢弃的消息，直接启用一台消费者，空消费消息</li>
+<li>如果有用，看是否需要及时处理，如果不需要及时处理，则将增加消费者，将消息持久化到本地，等过了高峰期在执行；</li>
+<li>如果是需要及时消费的消息，就多增加几台消费者，提高消费能力</li>
+</ol>
+<h3 id="消息队列的缺点"><strong>消息队列的缺点</strong></h3>
+<ol>
+<li>代码侵入性</li>
+<li>增加系统结构的复杂度
+<ol>
+<li>消息丢失问题</li>
+<li>消息幂等问题</li>
+<li>消息的顺序性问题</li>
+<li>一致性问题（事务）</li>
+</ol>
+</li>
+<li>系统可用性降低（高可用问题：搭建集群）</li>
+</ol>
+<h3 id="几种mq的区别"><strong>几种mq的区别</strong></h3>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>activeMQ</th>
+<th>rabbitMQ</th>
+<th>Kafka</th>
+<th>rocketMQ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>所属社区公司</td>
+<td>Apache</td>
+<td>Mozila Public License</td>
+<td>Apache</td>
+<td>Ali</td>
+</tr>
+<tr>
+<td>开发语言</td>
+<td>java</td>
+<td>erlang</td>
+<td>scala&amp;java</td>
+<td>java</td>
+</tr>
+<tr>
+<td>request-reply</td>
+<td>支持</td>
+<td>支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>单机吞吐</td>
+<td>万级</td>
+<td>万级</td>
+<td>十万级</td>
+<td>十万级</td>
+</tr>
+<tr>
+<td>topic数量对吞吐量的影响</td>
+<td></td>
+<td></td>
+<td>topic从几十到几百的时候，吞吐量大幅度下降；在同等及其下，kafka尽量保证topic数量不要过多，如果需要大规模支撑topic，则需要增加更多的及其资源</td>
+<td>topic可以达到几百上千的级别，吞吐量不会有的太大的波动</td>
+</tr>
+<tr>
+<td>消息丢失</td>
+<td>较低</td>
+<td>基本不丢失</td>
+<td>理论上可以达到不丢失</td>
+<td>理论上可以达到不丢失</td>
+</tr>
+<tr>
+<td>消息重复</td>
+<td>-</td>
+<td>可控制</td>
+<td>理论上会有重复</td>
+<td>理论上不会重复，时机会重复</td>
+</tr>
+<tr>
+<td>持久化</td>
+<td>内存、文件、数据库</td>
+<td>内存、文件、支持数据堆积；但是会影响生产能力</td>
+<td>磁盘文件</td>
+<td>磁盘文件</td>
+</tr>
+<tr>
+<td>是否有序</td>
+<td>支持有序</td>
+<td>若想有序，只能使用一个client</td>
+<td>多client保正有序</td>
+<td>有序</td>
+</tr>
+<tr>
+<td>事务</td>
+<td>支持</td>
+<td>不支持</td>
+<td>不支持</td>
+<td>支持</td>
+</tr>
+<tr>
+<td>可用性</td>
+<td>高（主从）</td>
+<td>高（主从）</td>
+<td>非常高（分布式）（分片+ 副本）</td>
+<td>非常高（分布式）（分片+ 副本）</td>
+</tr>
+</tbody>
+</table>
+<h3 id="kafka、Rocket高可用架构对比"><strong>kafka、Rocket高可用架构对比</strong></h3>
+<h4 id="kafka的分布式架构"><strong>kafka的分布式架构</strong></h4>
+<p>​	topic 分区，每个分区可以创建副本，副本不可以对外提供服务，支持同步异步刷盘，异步会有消息丢失，但速度快，主节点挂掉之后，会及时升级为主节点</p>
+<h4 id="rocketMQ的分布式架构"><strong>rocketMQ的分布式架构</strong></h4>
+<p>​	topic分片，支持数据备份（从节点），从节点可以对外提供读功能，支持同步已部刷盘，异步会有消息丢失，速度快；主节点挂掉之后。从节点不会升级为主节点；但在支持 Dledger 模式之后，是会将从节点提升为主节点的。</p>
+<h3 id="kafka速度快的原因"><strong>kafka速度快的原因</strong></h3>
+<ol>
+<li>零拷贝技术(mmap+sendfile)</li>
+<li>磁盘顺序写</li>
+<li>支持数据批量压缩</li>
+</ol>
+<h3 id="rocketmq快的原因"><strong>rocketmq快的原因</strong></h3>
+<ol>
+<li>零拷贝技术（mmap）
+<ol>
+<li>sendfile技术会直接将数据拷贝到socketbuffer中，因此对于用户进程是无感知的</li>
+<li>rocket的局部消费是会将队列进行锁定实现的，消息不进入用户进程无法实现修改和排序</li>
+</ol>
+</li>
+<li>磁盘同步写</li>
+<li>数据预读取（会读取命中数据页相邻的数据页进入内存，消费时，则减少多次对磁盘的读请求）</li>
+</ol>
+<h3 id="offset存储位置"><strong>offset存储位置</strong></h3>
+<ol>
+<li>kafka，原先版本存在于zk中，有zk维护</li>
+<li>之后的版本，会有一个consumer_offset的topic记录 <strong>group+topic+partition</strong> 的offset</li>
+<li>rocket Broker端会有一个文件统一存储整个topic的offset情况 存储数据格式：ConcurrentMap&lt;topic+group，ConcurrentMap&lt;queueId, offset&gt;&gt;</li>
+</ol>
+<h3 id="重复数据消费"><strong>重复数据消费</strong></h3>
+<ul>
+<li>因为是在分布式环境中，所以需要根据业务唯一键增加分布式锁</li>
+<li>获取到分布式锁后，判断是否消费过这条数据，可以将消费的数据唯一键放入redis中（带有效期）；</li>
+<li>也可以根据业务唯一键查询数据库，看是否需要再次消费；</li>
+</ul>
+<h3 id="消息丢失问题"><strong>消息丢失问题</strong></h3>
+<ol>
+<li>生产者端数据丢失
+<ol>
+<li>开启事务（消息发送至broker过程中，失败会报异常）</li>
+<li>开启confirm机制，返回ack结果，发起重试或者补偿</li>
+<li>本地记录消息数据，方便之后回溯以及补偿</li>
+</ol>
+</li>
+<li>broker端数据丢失
+<ol>
+<li>开启持久化机制</li>
+<li>数据同步阶段由于宕机造成数据丢失，则可以通过生产者端回溯补偿</li>
+</ol>
+</li>
+<li>消费者端数据丢失
+<ol>
+<li>开启手动ack机制，在消费数据完成之后在返回ack结果</li>
+<li>消费者端消费失败，则会将消息转发给别的消费者消费</li>
+<li>消费者端也可以通过本地记录消息数据，通过自己补偿接口进行补偿</li>
+</ol>
+</li>
+<li>kafka的相关机制
+<ol>
+<li>开启手动提交offset</li>
+<li>设置副本数量大于等于2（replication.factor）</li>
+<li>设置至少有一个副本和主节点保持链接（min.insync.replicas）</li>
+<li>设置所有的副本同步数据之后才返回ack给生产者（acks=all）</li>
+<li>设置无线重试（acks=all）</li>
+</ol>
+</li>
+</ol>
+<h3 id="怎么保证消息的顺序性"><strong>怎么保证消息的顺序性</strong></h3>
+<ol>
+<li>生产者端不能开启异步投递消息</li>
+<li>一般来说消费者端不能异步执行消息（不使用线程，必要的话开启手动ack）</li>
+<li>以Rocketmq为例
+<ol>
+<li>通过业务键将消息hash到同一个队列中</li>
+<li>rocket的局部顺序，会将队列锁定，只有当上一个消息消费完毕之后才会解锁，将下一个消息投递出去</li>
+</ol>
+</li>
+<li>以kafka为例
+<ol>
+<li>通过业务键将消息hash到同一个分区，因为一个分区在同一个组内只能对应一个消费者，</li>
+<li>消费者端保证不开线程</li>
+</ol>
+</li>
+<li>上述提到一个问题，消费者不能开线程，其实还有一种方案是将消息根据业务key先放到redis内存队列中，然后每个线程消费一个内存队列</li>
+</ol>
 
-      <!-- Main Content -->
-<div class="container">
-  <div class="row">
-    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
-      <!-- 归档列表 -->
 
-      
-
-      <!-- 归档列表 -->
-      
-      <div class="one-tag-list">
-        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
-          <span class="tag-text">2022</span>
-        </span>
-        <ul>
+        <hr>
+        <!-- Pager -->
+        <ul class="pager">
           
-          <li>
-            11-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/review/面试--redis/" style="color: #0085a1">
-              <span>
-                redis面试题
-                
-                -- cn
-                
-              </span>
-            </a>
+          <li class="previous">
+            <a href="/cn/review/面试--es/" data-toggle="tooltip" data-placement="top" title="ElasticSearch常见面试题">&larr; Previous Post</a>
           </li>
           
-          <li>
-            11-19
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/soft-install/nginx-安装/" style="color: #0085a1">
-              <span>
-                nginx 安装
-                
-                -- soft-install
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            11-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/review/面试--消息队列/" style="color: #0085a1">
-              <span>
-                消息队列
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
-          
-          <li>
-            11-13
-            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-            <a href="/cn/review/面试--es/" style="color: #0085a1">
-              <span>
-                ElasticSearch常见面试题
-                
-                -- cn
-                
-              </span>
-            </a>
-          </li>
           
         </ul>
+
+        
+        <!-- tip start -->
+        <!-- tip -->
+<!-- tip start -->
+<div class="tip">
+  <p>
+    
+      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
+    
+  </p>
+</div>
+<!-- tip end -->
+
+        <!-- tip end -->
+        
+
+        
+        <!-- Sharing Srtart -->
+        <!-- Social Social Share Post -->
+<!-- Docs:https://github.com/overtrue/share.js -->
+
+<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
+  <ul class="list-inline text-center social-share-ul">
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-twitter">
+        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a class="social-share-icon icon-wechat">
+        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-weibo">
+        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon icon-qq">
+        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+    <li class="social-share-li">
+      <a target="_blank" class="social-share-icon" href="mailto:?subject=消息队列&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/review/面试--消息队列/">
+        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
+      </a>
+    </li>
+  </ul>
+</div>
+
+<!-- css & js -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
+<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
+
+        <!-- Sharing End -->
+        
+        <hr>
+
+        <!-- comments start -->
+        <!-- 1. gitalk comment -->
+
+  <!-- gitalk start -->
+  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
+
+  <div id="gitalk-container"></div>
+
+  
+    <script src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/js/comment/gitalk.js"></script>
+  
+
+  <script>
+    var gitalk = new Gitalk({
+      clientID: '',
+      clientSecret: '',
+      repo: '',
+      owner: '',
+      admin: '',
+      id: 'Sun Nov 13 2022 00:00:00 GMT+0800', // Ensure uniqueness and length less than 50
+      distractionFreeMode: false, // Facebook-like distraction free mode
+      perPage: 10,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      language: 'en',
+      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+    });
+    gitalk.render('gitalk-container');
+
+    var gtFolded = () => {
+      setTimeout(function () {
+        let markdownBody = document.getElementsByClassName("markdown-body");
+        let list = Array.from(markdownBody);
+        list.forEach(item => {
+          if (item.clientHeight > 250) {
+            item.classList.add('gt-comment-body-folded');
+            item.style.maxHeight = '250px';
+            item.title = 'Click to Expand';
+            item.onclick = function () {
+              item.classList.remove('gt-comment-body-folded');
+              item.style.maxHeight = '';
+              item.title = '';
+              item.onclick = null;
+            };
+          }
+        })
+      }, 800);
+    }
+  </script>
+
+  <!-- gitalk end -->
+
+
+<!-- 2. gitment comment -->
+
+
+<!-- 3. disqus comment -->
+
+
+        <!-- comments end -->
+        <hr>
+
       </div>
-      
-    </div>
-  </div>
-</div>
+
+      <!-- Catalog: Tabe of Content -->
+      <!-- Table of Contents -->
 
 
-      <!-- 如果开启评论功能 -->
-      
-    </div>
 
-    <!-- Sidebar Container -->
-<div class="
-    col-lg-3 col-lg-offset-0
-    col-md-3 col-md-offset-0
-    col-sm-12
-    col-xs-12
-    sidebar-container
-">
-    
-        <!-- Visitors -->
-<h5><a href="/">VISITORS</a></h5>
+      <!-- Sidebar Container -->
+      <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
 
-<div class="widget">
-  <span>
-    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
-  </span>
-  <br />
-  <span>
-    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
-  </span>
-</div>
-
-
-        <hr>
-    
         <!-- Featured Tags -->
+        
+        <section>
+          <!-- no hr -->
+          <h5>
+            <a href="/tags/">特色标签</a>
+          </h5>
+          <div class="tags">
+            
+          </div>
+        </section>
+        
 
-<section>
-  <h5><a href="/tags/">FEATURED TAGS</a></h5>
-  <div class="tags">
-    
-    
-    <a href="/tags/#nginx" title="nginx" rel="1">nginx</a>
-    
-    
-    
-    <a href="/tags/#redis" title="redis" rel="1">redis</a>
-    
-    
-  </div>
-</section>
-
-
-        <hr>
-    
-        <!-- Short About -->
-<section class="visible-md visible-lg">
-  <h5><a href="/about/">ABOUT ME</a></h5>
-  <div class="short-about">
-
-    
-    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
-    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
-    
-
-    
-    <p>Fat people have no future, either thin or die...</p>
-    
-
-    <!-- SNS Link -->
-    <ul class="list-inline">
-      
-
-      
-      <li>
-        <a target="_blank" href="https://github.com/zhaoyaoyuan">
-          <span class="fa-stack fa-lg">
-            <i class="fa fa-circle fa-stack-2x"></i>
-            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-          </span>
-        </a>
-      </li>
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-      
-
-    </ul>
-  </div>
-</section>
-
-        <hr>
-    
-        <!-- RECENT POSTS -->
-
-<h5><a href="/">RECENT POSTS</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="../../soft-install/nginx-%E5%AE%89%E8%A3%85/">
-      <li>nginx 安装</li>
-    </a>
-    
-    <a href="../../cn/review/%E9%9D%A2%E8%AF%95--redis/">
-      <li>redis面试题</li>
-    </a>
-    
-    <a href="../../cn/review/%E9%9D%A2%E8%AF%95--es/">
-      <li>ElasticSearch常见面试题</li>
-    </a>
-    
-    <a href="../../cn/review/%E9%9D%A2%E8%AF%95--%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">
-      <li>消息队列</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
         <!-- Friends Blog -->
-
-
-        <hr>
-    
-        <!-- Archives -->
-
-<h5><a href="/archives/">archives</a></h5>
-<div class="widget">
-  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="11/">November 2022</a><span class="archive-list-count">4</span></li></ul>
-</div>
-
-
-        <hr>
-    
-        <!-- Categories -->
-
-<h5><a href="/categories/">categories</a></h5>
-<div class="widget">
-  <ul>
-    
-    <a href="/categories/#软件安装">
-      <li>软件安装</li>
-    </a>
-    
-    <a href="/categories/#面试">
-      <li>面试</li>
-    </a>
-    
-  </ul>
-</div>
-
-
-        <hr>
-    
-</div>
-
-
-    
+        
+      </div>
+    </div>
   </div>
-</div>
+</article>
+
+
+
+<!-- anchorjs start -->
+<!-- async load function -->
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script type="text/javascript">
+  // async load function
+  function async (u, c) {
+    var d = document,
+      t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) {
+      o.addEventListener('load', function(e) {
+        c(null, e);
+      }, false);
+    }
+    s.parentNode.insertBefore(o, s);
+  };
+</script>
+<script type="text/javascript">
+  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
+  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
+    anchors.options = {
+      visible: 'hover',
+      placement: 'left',
+      // icon: 'ℬ'
+      icon: '❡'
+    };
+    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+  });
+</script>
+<style>
+  /* place left on bigger screen */
+  @media all and (min-width: 800px) {
+    .anchorjs-link {
+      position: absolute;
+      left: -0.75em;
+      font-size: 1.1em;
+      margin-top: -0.1em;
+    }
+  }
+</style>
+
+<!-- anchorjs end -->
+
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -825,7 +1023,7 @@
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "zhaoyaoyuan";
     let ghPages = gh + ".github.io";
-    let pagePath = "archives/2022/index.html";
+    let pagePath = "cn/review/面试--消息队列/";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -903,7 +1101,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
