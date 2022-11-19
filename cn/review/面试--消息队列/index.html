@@ -248,9 +248,9 @@
           
           
           <li>
-            <a href="/categories/">
+            <a href="/about/">
               
-              分类
+              关于
               
               
             </a>
@@ -270,9 +270,9 @@
           
           
           <li>
-            <a href="/about/">
+            <a href="/categories/">
               
-              关于
+              分类
               
               
             </a>
@@ -404,11 +404,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">5</span> Minutes
+              Estimated Reading Time <span class="post-count">7</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.4k</span> In Total
+              Words <span class="post-count">2k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -470,36 +470,48 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <h1 id="消息队列"><a href="#消息队列" class="headerlink" title="消息队列"></a>消息队列</h1><h3 id="项目哪里用到消息队列"><a href="#项目哪里用到消息队列" class="headerlink" title="项目哪里用到消息队列"></a><strong>项目哪里用到消息队列</strong></h3><ul>
+        <h1>消息队列</h1>
+<h3 id="项目哪里用到消息队列"><strong>项目哪里用到消息队列</strong></h3>
+<ul>
 <li>场景一：在基础平台项目里面，我们要对接一个功能，是接入快递查询的，由于我们系统不直接对外网暴露服务，所以需要靠门户系统对接快递鸟的推送服务。快递鸟通过门户提供的回调接口将快递轨迹推送给门户，门户会将消息发送到DDMQ,之后我通过订阅DDMQ，去消费mq的消息，存入我们数据库并展示到页面上。</li>
 <li>场景二：在接力棒系统中，我们系统主要模型是，通过上游系统的接口，拉取到上游系统的数据，存入我们系统；之后客户在我们页面发起数据移交流程，审批通过之后，在通知下游系统移交具体对应的数据。在通知下游系统这步骤，用到了MQ。我们将消息通过mq告知下游系统，下游系统在通过mq反馈给我们移交结果。</li>
 </ul>
-<h3 id="在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？"><a href="#在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？" class="headerlink" title="在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？"></a><strong>在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？</strong></h3><ul>
-<li><p>上游系统有多个，并不能统一要求他们都使用mq</p>
+<h3 id="在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？"><strong>在接力棒第一阶段，为什么不让上游也推送数据至mq中，你们去消费消息？</strong></h3>
+<ul>
+<li>
+<p>上游系统有多个，并不能统一要求他们都使用mq</p>
 </li>
-<li><p>上游系统认为mq对代码侵入性有点强，不想增加系统的复杂度</p>
+<li>
+<p>上游系统认为mq对代码侵入性有点强，不想增加系统的复杂度</p>
 </li>
 </ul>
-<h3 id="在第二阶段，为什么要使用mq"><a href="#在第二阶段，为什么要使用mq" class="headerlink" title="在第二阶段，为什么要使用mq"></a><strong>在第二阶段，为什么要使用mq</strong></h3><ul>
+<h3 id="在第二阶段，为什么要使用mq"><strong>在第二阶段，为什么要使用mq</strong></h3>
+<ul>
 <li>主要是为了保证近实时性，不需要下游系统通过定时任务拉取数据</li>
 <li>第二是解耦合：直接使用http调用的话，下游系统的错误可能引起我们系统的不稳定甚至服务雪崩</li>
 <li>第三是异步：下游系统的耗时并不会影响我们系统的性能</li>
 <li>第四是应对下游系统服务变更，下游系统如果不想对接那他直接取消我们mq的订阅就可以了；或者下游系统变更域名、ip之类的，也不需要我们更改配置</li>
 </ul>
-<h3 id="mq异步和线程异步有什么区别？"><a href="#mq异步和线程异步有什么区别？" class="headerlink" title="mq异步和线程异步有什么区别？"></a><strong>mq异步和线程异步有什么区别？</strong></h3><ul>
-<li><p>少量并发情况下，两者其实区别不大</p>
+<h3 id="mq异步和线程异步有什么区别？"><strong>mq异步和线程异步有什么区别？</strong></h3>
+<ul>
+<li>
+<p>少量并发情况下，两者其实区别不大</p>
 </li>
-<li><p>在大并发场景下，多线程异步会让机器CPU急速增高，服务性能急速下降；使用mq的话，会有流量削峰的作用，是的我们服务平滑运行。</p>
+<li>
+<p>在大并发场景下，多线程异步会让机器CPU急速增高，服务性能急速下降；使用mq的话，会有流量削峰的作用，是的我们服务平滑运行。</p>
 </li>
 </ul>
-<h3 id="消息堆积"><a href="#消息堆积" class="headerlink" title="消息堆积"></a><strong>消息堆积</strong></h3><ol>
+<h3 id="消息堆积"><strong>消息堆积</strong></h3>
+<ol>
 <li>看消息是否有用，如果是可以丢弃的消息，直接启用一台消费者，空消费消息</li>
 <li>如果有用，看是否需要及时处理，如果不需要及时处理，则将增加消费者，将消息持久化到本地，等过了高峰期在执行；</li>
 <li>如果是需要及时消费的消息，就多增加几台消费者，提高消费能力</li>
 </ol>
-<h3 id="消息队列的缺点"><a href="#消息队列的缺点" class="headerlink" title="消息队列的缺点"></a><strong>消息队列的缺点</strong></h3><ol>
+<h3 id="消息队列的缺点"><strong>消息队列的缺点</strong></h3>
+<ol>
 <li>代码侵入性</li>
-<li>增加系统结构的复杂度<ol>
+<li>增加系统结构的复杂度
+<ol>
 <li>消息丢失问题</li>
 <li>消息幂等问题</li>
 <li>消息的顺序性问题</li>
@@ -508,7 +520,7 @@
 </li>
 <li>系统可用性降低（高可用问题：搭建集群）</li>
 </ol>
-<h3 id="几种mq的区别"><a href="#几种mq的区别" class="headerlink" title="几种mq的区别"></a><strong>几种mq的区别</strong></h3><div class="table-container">
+<h3 id="几种mq的区别"><strong>几种mq的区别</strong></h3>
 <table>
 <thead>
 <tr>
@@ -599,16 +611,21 @@
 </tr>
 </tbody>
 </table>
-</div>
-<h3 id="kafka、Rocket高可用架构对比"><a href="#kafka、Rocket高可用架构对比" class="headerlink" title="kafka、Rocket高可用架构对比"></a><strong>kafka、Rocket高可用架构对比</strong></h3><h4 id="kafka的分布式架构"><a href="#kafka的分布式架构" class="headerlink" title="kafka的分布式架构"></a><strong>kafka的分布式架构</strong></h4><p>​    topic 分区，每个分区可以创建副本，副本不可以对外提供服务，支持同步异步刷盘，异步会有消息丢失，但速度快，主节点挂掉之后，会及时升级为主节点</p>
-<h4 id="rocketMQ的分布式架构"><a href="#rocketMQ的分布式架构" class="headerlink" title="rocketMQ的分布式架构"></a><strong>rocketMQ的分布式架构</strong></h4><p>​    topic分片，支持数据备份（从节点），从节点可以对外提供读功能，支持同步已部刷盘，异步会有消息丢失，速度快；主节点挂掉之后。从节点不会升级为主节点；但在支持 Dledger 模式之后，是会将从节点提升为主节点的。</p>
-<h3 id="kafka速度快的原因"><a href="#kafka速度快的原因" class="headerlink" title="kafka速度快的原因"></a><strong>kafka速度快的原因</strong></h3><ol>
+<h3 id="kafka、Rocket高可用架构对比"><strong>kafka、Rocket高可用架构对比</strong></h3>
+<h4 id="kafka的分布式架构"><strong>kafka的分布式架构</strong></h4>
+<p>​	topic 分区，每个分区可以创建副本，副本不可以对外提供服务，支持同步异步刷盘，异步会有消息丢失，但速度快，主节点挂掉之后，会及时升级为主节点</p>
+<h4 id="rocketMQ的分布式架构"><strong>rocketMQ的分布式架构</strong></h4>
+<p>​	topic分片，支持数据备份（从节点），从节点可以对外提供读功能，支持同步已部刷盘，异步会有消息丢失，速度快；主节点挂掉之后。从节点不会升级为主节点；但在支持 Dledger 模式之后，是会将从节点提升为主节点的。</p>
+<h3 id="kafka速度快的原因"><strong>kafka速度快的原因</strong></h3>
+<ol>
 <li>零拷贝技术(mmap+sendfile)</li>
 <li>磁盘顺序写</li>
 <li>支持数据批量压缩</li>
 </ol>
-<h3 id="rocketmq快的原因"><a href="#rocketmq快的原因" class="headerlink" title="rocketmq快的原因"></a><strong>rocketmq快的原因</strong></h3><ol>
-<li>零拷贝技术（mmap）<ol>
+<h3 id="rocketmq快的原因"><strong>rocketmq快的原因</strong></h3>
+<ol>
+<li>零拷贝技术（mmap）
+<ol>
 <li>sendfile技术会直接将数据拷贝到socketbuffer中，因此对于用户进程是无感知的</li>
 <li>rocket的局部消费是会将队列进行锁定实现的，消息不进入用户进程无法实现修改和排序</li>
 </ol>
@@ -616,35 +633,42 @@
 <li>磁盘同步写</li>
 <li>数据预读取（会读取命中数据页相邻的数据页进入内存，消费时，则减少多次对磁盘的读请求）</li>
 </ol>
-<h3 id="offset存储位置"><a href="#offset存储位置" class="headerlink" title="offset存储位置"></a><strong>offset存储位置</strong></h3><ol>
+<h3 id="offset存储位置"><strong>offset存储位置</strong></h3>
+<ol>
 <li>kafka，原先版本存在于zk中，有zk维护</li>
 <li>之后的版本，会有一个consumer_offset的topic记录 <strong>group+topic+partition</strong> 的offset</li>
-<li>rocket Broker端会有一个文件统一存储整个topic的offset情况 存储数据格式：ConcurrentMap<topic+group，ConcurrentMap<queueId, offset>&gt;</li>
+<li>rocket Broker端会有一个文件统一存储整个topic的offset情况 存储数据格式：ConcurrentMap&lt;topic+group，ConcurrentMap&lt;queueId, offset&gt;&gt;</li>
 </ol>
-<h3 id="重复数据消费"><a href="#重复数据消费" class="headerlink" title="重复数据消费"></a><strong>重复数据消费</strong></h3><ul>
+<h3 id="重复数据消费"><strong>重复数据消费</strong></h3>
+<ul>
 <li>因为是在分布式环境中，所以需要根据业务唯一键增加分布式锁</li>
 <li>获取到分布式锁后，判断是否消费过这条数据，可以将消费的数据唯一键放入redis中（带有效期）；</li>
 <li>也可以根据业务唯一键查询数据库，看是否需要再次消费；</li>
 </ul>
-<h3 id="消息丢失问题"><a href="#消息丢失问题" class="headerlink" title="消息丢失问题"></a><strong>消息丢失问题</strong></h3><ol>
-<li>生产者端数据丢失<ol>
+<h3 id="消息丢失问题"><strong>消息丢失问题</strong></h3>
+<ol>
+<li>生产者端数据丢失
+<ol>
 <li>开启事务（消息发送至broker过程中，失败会报异常）</li>
 <li>开启confirm机制，返回ack结果，发起重试或者补偿</li>
 <li>本地记录消息数据，方便之后回溯以及补偿</li>
 </ol>
 </li>
-<li>broker端数据丢失<ol>
+<li>broker端数据丢失
+<ol>
 <li>开启持久化机制</li>
 <li>数据同步阶段由于宕机造成数据丢失，则可以通过生产者端回溯补偿</li>
 </ol>
 </li>
-<li>消费者端数据丢失<ol>
+<li>消费者端数据丢失
+<ol>
 <li>开启手动ack机制，在消费数据完成之后在返回ack结果</li>
 <li>消费者端消费失败，则会将消息转发给别的消费者消费</li>
 <li>消费者端也可以通过本地记录消息数据，通过自己补偿接口进行补偿</li>
 </ol>
 </li>
-<li>kafka的相关机制<ol>
+<li>kafka的相关机制
+<ol>
 <li>开启手动提交offset</li>
 <li>设置副本数量大于等于2（replication.factor）</li>
 <li>设置至少有一个副本和主节点保持链接（min.insync.replicas）</li>
@@ -653,15 +677,18 @@
 </ol>
 </li>
 </ol>
-<h3 id="怎么保证消息的顺序性"><a href="#怎么保证消息的顺序性" class="headerlink" title="怎么保证消息的顺序性"></a><strong>怎么保证消息的顺序性</strong></h3><ol>
+<h3 id="怎么保证消息的顺序性"><strong>怎么保证消息的顺序性</strong></h3>
+<ol>
 <li>生产者端不能开启异步投递消息</li>
 <li>一般来说消费者端不能异步执行消息（不使用线程，必要的话开启手动ack）</li>
-<li>以Rocketmq为例<ol>
+<li>以Rocketmq为例
+<ol>
 <li>通过业务键将消息hash到同一个队列中</li>
 <li>rocket的局部顺序，会将队列锁定，只有当上一个消息消费完毕之后才会解锁，将下一个消息投递出去</li>
 </ol>
 </li>
-<li>以kafka为例<ol>
+<li>以kafka为例
+<ol>
 <li>通过业务键将消息hash到同一个分区，因为一个分区在同一个组内只能对应一个消费者，</li>
 <li>消费者端保证不开线程</li>
 </ol>
