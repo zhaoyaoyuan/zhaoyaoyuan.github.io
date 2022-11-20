@@ -247,6 +247,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               ABOUT
@@ -261,17 +272,6 @@
             <a href="/categories/">
               
               CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -524,9 +524,8 @@
 
 修改 shell path 为 git ，选择安装 git 的安装目录下的 bin 目录下的bash.exe 点击 apply。
 例如：D:\Develop\Git\bin\bash.exe -l -l
-
 注意路径后面的 -l -l，当设置 git 命令别名的时候，加上 -l -l 使得全局生效。
-到用户目录下，新建文件 .bash_pr......
+到用户目录下，新建文件 .bash_pro......
     </div>
   </a>
   
@@ -592,8 +591,8 @@
       
     </h3>
     <div class="post-content-preview">
-      nginx地址
-123456789101112131415161718#下载nginxwget https://nginx.org/download/nginx-1.22.1.tar.gz# 解压文件tar -zxvf nginx-1.22.1.tar.gz #更换文件夹名称mv nginx-1.22.1 nginx#进入nginxcd nginx#配置nginx安装路径./configur......
+       nginx地址
+123456789101112131415161718#下载nginxwget https://nginx.org/download/nginx-1.22.1.tar.gz# 解压文件tar -zxvf nginx-1.22.1.tar.gz #更换文件夹名称mv nginx-1.22.1 nginx#进入nginxcd nginx#配置nginx安装路径./configu......
     </div>
   </a>
   
@@ -626,21 +625,14 @@
       
     </h3>
     <div class="post-content-preview">
-      redis 面试题
-redis 相关面试题
+      redis 面试题redis 相关面试题
 BIO、NIO
-
 BIO:(同步阻塞式IO)每一个IO有一个单独的线程，阻塞等待IO读写完成。
-
-
 NIO:(同步非阻塞式IO)使用一个线程监控IO读写，当IO读写完成后，来转给对应的进程掉起业务线程处理数据。
-
-
 AIO:(异步非阻塞式IO)略。
 
 IO多路复用
-
-select 模型：一次取多个 fd 和内核交互，数据结构使用 bitmap，限制......
+select 模型：一次取多个 fd 和内核交互，数据结构使用 bitmap，限制在 1024 ......
     </div>
   </a>
   
@@ -673,15 +665,12 @@ select 模型：一次取多个 fd 和内核交互，数据结构使用 bitmap�
       
     </h3>
     <div class="post-content-preview">
-      ElasticSearch分布式搜索引擎
-es相关面试问题
+      ElasticSearch分布式搜索引擎es相关面试问题
 什么是Lucene
-
 Lucene 是一套用于全文检索和搜寻的开源程式库,使用原生 lucene 开发比较麻烦，所以衍生出 Solr、 es等框架。solr 使用与单机搜索；而es是一款分布式的搜索引擎
 
 什么是倒排索引
-
-倒排索引就是将文档经过一系列规则（分词器）分成多个单词，之后将其对应的文档id维护在 term 索引库中，格式......
+倒排索引就是将文档经过一系列规则（分词器）分成多个单词，之后将其对应的文档id维护在 term 索引库中，格式大概是......
     </div>
   </a>
   
@@ -712,11 +701,9 @@ Lucene 是一套用于全文检索和搜寻的开源程式库,使用原生 lucen
       
     </h3>
     <div class="post-content-preview">
-      消息队列
-项目哪里用到消息队列
-
+      消息队列项目哪里用到消息队列
 场景一：在基础平台项目里面，我们要对接一个功能，是接入快递查询的，由于我们系统不直接对外网暴露服务，所以需要靠门户系统对接快递鸟的推送服务。快递鸟通过门户提供的回调接口将快递轨迹推送给门户，门户会将消息发送到DDMQ,之后我通过订阅DDMQ，去消费mq的消息，存入我们数据库并展示到页面上。
-场景二：在接力棒系统中，我们系统主要模型是，通过上游系统的接口，拉取......
+场景二：在接力棒系统中，我们系统主要模型是，通过上游系统的接口，拉取到上......
     </div>
   </a>
   
