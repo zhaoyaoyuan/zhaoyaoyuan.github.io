@@ -140,10 +140,10 @@
   <!--[if lt IE 9]> <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->
 
   <!-- ga & ba script hoook -->
-  <link rel="canonical" href="http://yoursite-url/cn/review/面试--redis/">
+  <link rel="canonical" href="http://yoursite-url/tags/基础语法/">
   <title>
     
-      redis面试题 - talkink
+      talkink
     
   </title>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -240,7 +240,7 @@
       <div class="navbar-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="/">首页</a>
+            <a href="/">HOME</a>
           </li>
 
           
@@ -250,7 +250,7 @@
           <li>
             <a href="/archive/">
               
-              归档
+              ARCHIVES
               
               
             </a>
@@ -261,7 +261,7 @@
           <li>
             <a href="/about/">
               
-              关于
+              ABOUT
               
               
             </a>
@@ -272,7 +272,7 @@
           <li>
             <a href="/categories/">
               
-              分类
+              CATEGORIES
               
               
             </a>
@@ -283,7 +283,7 @@
           <li>
             <a href="/tags/">
               
-              标签
+              TAGS
               
               
             </a>
@@ -294,14 +294,36 @@
           
           <li>
             <a class="popup-trigger">
-              <span class="search-icon"></span>搜索</a>
+              <span class="search-icon"></span>SEARCH</a>
           </li>
           
 
           <!-- LangSelect -->
           
           
-          
+          <!-- LangSelect start -->
+          <!-- LangSelect -->
+<li>
+  <a id="lang-select-label"><i class="fa fa-globe"></i>
+    <span>
+      English
+    </span>
+    <select id="lang-select" data-canonical="tags/基础语法/index.html">
+      
+      
+      <option value="en"  selected >
+        English
+      </option>
+      
+      <option value="cn" >
+        简体中文
+      </option>
+      
+    </select>
+  </a>
+</li>
+
+          <!-- LangSelect end -->
           
           
         </ul>
@@ -363,9 +385,9 @@
       --intro-header-background-image-url-page: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2)), url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/img/header_img/archive_bg2.jpg');
     }
     header.intro-header {
-       /*post*/
-        background-image: var(--intro-header-background-image-url-post);
-        /* background-image: url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io'); */
+       /*page*/
+        background-image: var(--intro-header-background-image-url-page);
+        /* background-image: url('https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/img/header_img/archive_bg2.jpg'); */
       
     }
 
@@ -388,42 +410,10 @@
       <div class="row">
         <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
           
-          <div class="post-heading">
-            <div class="tags">
-              
-              <a class="tag" href="/tags/#redis" title="redis">redis</a>
-              
-            </div>
-            <h1>redis面试题</h1>
-            <h2 class="subheading"></h2>
-            <span class="meta">
-              Posted by talkink on
-              2022-11-19
-            </span>
-
-
-            
-            <!-- WordCount start -->
-            <div class="blank_box"></div>
-            <span class="meta">
-              Estimated Reading Time <span class="post-count">18</span> Minutes
-            </span>
-            <div class="blank_box"></div>
-            <span class="meta">
-              Words <span class="post-count">5k</span> In Total
-            </span>
-            <div class="blank_box"></div>
-            <!-- WordCount end -->
-            
-            
-            <!-- 不蒜子统计 start -->
-            <span class="meta" id="busuanzi_container_page_pv">
-              Viewed <span id="busuanzi_value_page_pv"><i class="fa fa-spinner fa-spin"></i></span> Times
-            </span>
-            <!-- 不蒜子统计 end -->
-            
-
-
+          <div class="site-heading">
+            <h1>talkink</h1>
+            <!--<hr class="small">-->
+            <span class="subheading">富在术数，不在劳身，利在局势，不在力耕。你要抬头看路，而非低头干活。</span>
           </div>
           
         </div>
@@ -464,477 +454,309 @@
 	Friends Blog、
 	anchorjs、
 	) -->
-		<!-- Modify by Yu-Hsuan Yen -->
-<!-- Post Content -->
-<article>
-  <div class="container">
-    <div class="row">
-      <!-- Post Container -->
-      <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
+		<!-- Main Content -->
+<div class="container">
+  <div class="row">
+    
 
-        <h1>redis 面试题</h1>
-<p>redis 相关面试题</p>
-<h2 id="BIO、NIO">BIO、NIO</h2>
-<blockquote>
-<p>BIO:(同步阻塞式IO)每一个IO有一个单独的线程，阻塞等待IO读写完成。</p>
-</blockquote>
-<blockquote>
-<p>NIO:(同步非阻塞式IO)使用一个线程监控IO读写，当IO读写完成后，来转给对应的进程掉起业务线程处理数据。</p>
-</blockquote>
-<blockquote>
-<p>AIO:(异步非阻塞式IO)略。</p>
-</blockquote>
-<h2 id="IO多路复用">IO多路复用</h2>
-<blockquote>
-<p>select 模型：一次取多个 fd 和内核交互，数据结构使用 bitmap，限制在 1024 个 fd</p>
-</blockquote>
-<blockquote>
-<p>poll 模型：一次取多个 fd 和内核交互，数据结构使用链表，没有限制</p>
-</blockquote>
-<blockquote>
-<p>epoll 模型：一次取多个 fd 和内核交互，使用mmap，数据结构使用红黑树，提高查询性能，然后将准备好的 fd 单独放在一个 链表中，然后让业务读取。</p>
-</blockquote>
-<h2 id="缓存穿透">缓存穿透</h2>
-<ol>
-<li>数据库没有数据</li>
-<li>redis没有数据</li>
-<li>大量的请求该数据直接达到数据库</li>
-</ol>
-<h2 id="缓存穿透解决">缓存穿透解决</h2>
-<ol>
-<li>使用null替代</li>
-<li>布隆过滤器（BF：有key重叠问题，导致可能有的数据没有但是还是去查数据库了）</li>
-</ol>
-<h2 id="缓存击穿">缓存击穿</h2>
-<ol>
-<li>数据库有数据（单个key）</li>
-<li>redis没有数据或者刚过期</li>
-<li>大量的请求该数据</li>
-</ol>
-<h2 id="缓存击穿解决">缓存击穿解决</h2>
-<h2 id="缓存雪崩">缓存雪崩</h2>
-<ol>
-<li>数据库有数据（大量的key）</li>
-<li>redis大量key过期（或者没有）</li>
-<li>大量的请求热点数据</li>
-</ol>
-<h2 id="怎么应对缓存雪崩问题">怎么应对缓存雪崩问题</h2>
-<ol>
-<li>预防：提前数据预热；缓存时间错峰</li>
-<li>事前：搭建高可用集群，避免全面崩盘</li>
-<li>事中：多级缓存，服务增加本地缓存，增加限流、降级机制，避免数据库崩溃</li>
-<li>事后：redis持久化，数据快速恢复</li>
-</ol>
-<h2 id="缓存淘汰策略（内存不足时，新增数据）">缓存淘汰策略（内存不足时，新增数据）</h2>
-<p>redis相关配置：<br>
-maxmemory ？MB                  (分配给redis的物理内存)<br>
-maxmemory-samples ?count        (删除的个数)<br>
-maxmemory-policy ?policy        (删除的策略)</p>
-<ol>
-<li>（针对所有数据）删除就报错</li>
-<li>（针对过期数据和持久数据）随机删除（random）</li>
-<li>（针对过期数据和持久数据）删除最近没有使用的key（LRU）</li>
-<li>（针对过期数据和持久数据）删除最近一段时间最少使用的（LFU）</li>
-<li>（针对过期数据）删除最快过期的数据（ttl）</li>
-</ol>
-<h2 id="缓存过期判定">缓存过期判定</h2>
-<ol>
-<li>当 key 过期之后，不会主动删除，只有当再次访问这个key的时候 去删除该key</li>
-<li>当 key 过期之后，立即删除。极大地影响机器的性能</li>
-<li>由于定时删除，一直轮询过期key消耗性能，所以 redis 默认每秒执行 10 次（配置文件中有个参数 HZ=10），随机找一定数量的key（20个），检测是否过期，有则删除.</li>
-</ol>
-<h2 id="数据持久化">数据持久化</h2>
-<blockquote>
-<p>RDB:（数据快照）保存某个时间节点的压缩数据，在下一次RDB之前的数据可能会丢失<br>
-save：当关机或者维护的时候采用，阻塞式持久化数据<br>
-bgsave：异步fork 一个子进程，通过内核的 copy on write 把当前时间的数据 ‘定’ 住，然后将数据持久化到磁盘<br>
-AOF:（操作日志）保存几乎全量的操作日志，文件比较大，但是会有部分命令优化（合并）。可以设置持久化的策略</p>
-<ol>
-<li>always：每条数据都持久化</li>
-<li>everysec：自己设置触发持久化的时机（如每秒插入的数据超过多少条）</li>
-<li>no：由操作系统自己控制flush<br>
-AOF+RDB:redis恢复时，只会使用AOF（4.0之后AOF会包含一个二进制的数据文件，以提高性能）</li>
-</ol>
-</blockquote>
-<h2 id="redis-slave-数据复制过程">redis slave 数据复制过程</h2>
-<p>（1）保存主节点信息：slave node启动，仅仅保存master node的信息，包括master node的host和ip，但是复制流程没开始</p>
-<pre><code>master host和ip是从哪儿来的，redis.conf里面的slaveof配置的（不靠谱）。主节点变更之后 会从 master run id 去拉取数据
-</code></pre>
-<p>（2）与主节点建立连接：slave node内部有个定时任务，每秒检查是否有新的master node要连接和复制，如果发现，就跟master node建立socket网络连接<br>
-（3）发送ping命令：slave node发送ping命令给master node<br>
-（4）口令认证：如果master设置了requirepass，那么salve node必须发送masterauth的口令过去进行认证<br>
-（5）全量复制：master node第一次执行全量复制，将所有数据发给slave node；同时创建一个 buffer 存储全量复制过程中接受到的命令<br>
-（6）增量复制：master node 将buffer中的命令发送给 slave node 执行<br>
-（7）后续命令：master node后续持续将写命令，异步复制给slave node</p>
-<h2 id="数据同步相关的核心机制">数据同步相关的核心机制</h2>
-<pre><code>指的就是第一次slave连接msater的时候，执行的全量复制，那个过程里面你的一些细节的机制
-</code></pre>
-<p>（1）master和slave都会维护一个offset</p>
-<p>master会在自身不断累加offset，slave也会在自身不断累加offset<br>
-slave每秒都会上报自己的offset给master，同时master也会保存每个slave的offset</p>
-<p>这个倒不是说特定就用在全量复制的，主要是master和slave都要知道各自的数据的offset，才能知道互相之间的数据不一致的情况</p>
-<p>（2）backlog</p>
-<p>master node有一个backlog，默认是1MB大小<br>
-master node给slave node复制数据时，也会将数据在backlog中同步写一份<br>
-backlog主要是用来做全量复制中断后的增量复制的</p>
-<p>（3）master run id</p>
-<p>info server，可以看到master run id<br>
-如果根据host+ip定位master node，是不靠谱的，如果master node重启或者数据出现了变化，那么slave node应该根据不同的run id区分，run id不同就做全量复制<br>
-如果需要不更改run id重启redis，可以使用redis-cli debug reload命令</p>
-<p>（4）psync</p>
-<p>从节点使用psync从master node进行复制，psync runid offset<br>
-master node会根据自身的情况返回响应信息，可能是FULLRESYNC runid offset触发全量复制，可能是CONTINUE触发增量复制</p>
-<h2 id="全量复制">全量复制</h2>
-<p>（1）master执行bgsave，在本地生成一份rdb快照文件<br>
-（2）master node将rdb快照文件发送给salve node，如果rdb复制时间超过60秒（repl-timeout），那么slave node就会认为复制失败，可以适当调节大这个参数<br>
-（3）对于千兆网卡的机器，一般每秒传输100MB，6G文件，很可能超过60s<br>
-（4）master node在生成rdb时，会将所有新的写命令缓存在内存中，在salve node保存了rdb之后，再将新的写命令复制给salve node<br>
-（5）client-output-buffer-limit slave 256MB 64MB 60，如果在复制期间，内存缓冲区持续消耗超过64MB，或者一次性超过256MB，那么停止复制，复制失败<br>
-（6）slave node接收到rdb之后，清空自己的旧数据，然后重新加载rdb到自己的内存中，同时基于旧的数据版本对外提供服务<br>
-（7）如果slave node开启了AOF，那么会立即执行BGREWRITEAOF，重写AOF</p>
-<p>rdb生成、rdb通过网络拷贝、slave旧数据的清理、slave aof rewrite，很耗费时间</p>
-<p>如果复制的数据量在4G~6G之间，那么很可能全量复制时间消耗到1分半到2分钟</p>
-<h2 id="全量复制过程中中断后的增量复制">全量复制过程中中断后的增量复制</h2>
-<p>（1）如果全量复制过程中，master-slave网络连接断掉，那么salve重新连接master时，会触发增量复制<br>
-（2）master直接从自己的backlog中获取部分丢失的数据，发送给slave node，默认backlog就是1MB<br>
-（3）msater就是根据slave发送的psync中的offset来从backlog中获取数据的</p>
-<h2 id="heartbeat">heartbeat</h2>
-<p>主从节点互相都会发送heartbeat信息</p>
-<p>master默认每隔10秒发送一次heartbeat，salve node每隔1秒发送一个heartbeat</p>
-<h2 id="异步复制">异步复制</h2>
-<p>master每次接收到写命令之后，现在内部写入数据，然后异步发送给slave node</p>
-<h2 id="哨兵机制">哨兵机制</h2>
-<p>1、哨兵的介绍</p>
-<p>sentinal，中文名是哨兵</p>
-<p>哨兵是redis集群架构中非常重要的一个组件，主要功能如下</p>
-<p>（1）集群监控，负责监控redis master和slave进程是否正常工作<br>
-（2）消息通知，如果某个redis实例有故障，那么哨兵负责发送消息作为报警通知给管理员<br>
-（3）故障转移，如果master node挂掉了，会自动转移到slave node上<br>
-（4）配置中心，如果故障转移发生了，通知client客户端新的master地址</p>
-<p>哨兵本身也是分布式的，作为一个哨兵集群去运行，互相协同工作</p>
-<p>（1）故障转移时，判断一个master node是宕机了，需要大部分的哨兵都同意才行，涉及到了分布式选举的问题<br>
-（2）即使部分哨兵节点挂掉了，哨兵集群还是能正常工作的，因为如果一个作为高可用机制重要组成部分的故障转移系统本身是单点的，那就很坑爹了</p>
-<p>目前采用的是sentinal 2版本，sentinal 2相对于sentinal 1来说，重写了很多代码，主要是让故障转移的机制和算法变得更加健壮和简单</p>
-<p>2、哨兵的核心知识</p>
-<p>（1）哨兵至少需要3个实例，来保证自己的健壮性<br>
-（2）哨兵 + redis主从的部署架构，是不会保证数据零丢失的，只能保证redis集群的高可用性<br>
-（3）对于哨兵 + redis主从这种复杂的部署架构，尽量在测试环境和生产环境，都进行充足的测试和演练</p>
-<p>3、为什么redis哨兵集群只有2个节点无法正常工作？</p>
-<p>哨兵集群必须部署2个以上节点</p>
-<p>如果哨兵集群仅仅部署了个2个哨兵实例，quorum=1</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">+----+         +----+</span><br><span class="line">|<span class="string"> M1 </span>|<span class="string">---------</span>|<span class="string"> R1 </span>|</span><br><span class="line">|<span class="string"> S1 </span>|<span class="string">         </span>|<span class="string"> S2 </span>|</span><br><span class="line">+----+         +----+</span><br></pre></td></tr></table></figure>
-<p>Configuration: quorum = 1</p>
-<p>master宕机，s1和s2中只要有1个哨兵认为master宕机就可以还行切换，同时s1和s2中会选举出一个哨兵来执行故障转移</p>
-<p>同时这个时候，需要majority，也就是大多数哨兵都是运行的，2个哨兵的majority就是2（2的majority=2，3的majority=2，5的majority=3，4的majority=2），2个哨兵都运行着，就可以允许执行故障转移</p>
-<p>但是如果整个M1和S1运行的机器宕机了，那么哨兵只有1个了，此时就没有majority来允许执行故障转移，虽然另外一台机器还有一个R1，但是故障转移不会执行</p>
-<p>4、经典的3节点哨兵集群</p>
-<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">       +----+</span><br><span class="line">       |<span class="string"> M1 </span>|</span><br><span class="line">       |<span class="string"> S1 </span>|</span><br><span class="line">       +----+</span><br><span class="line">          |</span><br><span class="line"><span class="string">+----+    </span>|<span class="string">    +----+</span></span><br><span class="line">|<span class="string"> R2 </span>|<span class="string">----+----</span>|<span class="string"> R3 </span>|</span><br><span class="line">|<span class="string"> S2 </span>|<span class="string">         </span>|<span class="string"> S3 </span>|</span><br><span class="line">+----+         +----+</span><br></pre></td></tr></table></figure>
-<p>Configuration: quorum = 2，majority</p>
-<p>如果M1所在机器宕机了，那么三个哨兵还剩下2个，S2和S3可以一致认为master宕机，然后选举出一个来执行故障转移</p>
-<p>同时3个哨兵的majority是2，所以还剩下的2个哨兵运行着，就可以允许执行故障转移</p>
-<h2 id="数据丢失问题">数据丢失问题</h2>
-<p>1、两种数据丢失的情况</p>
-<p>主备切换的过程，可能会导致数据丢失</p>
-<p>（1）异步复制导致的数据丢失</p>
-<p>因为master -&gt; slave的复制是异步的，所以可能有部分数据还没复制到slave，master就宕机了，此时这些部分数据就丢失了</p>
-<p>（2）脑裂导致的数据丢失</p>
-<p>脑裂，也就是说，某个master所在机器突然脱离了正常的网络，跟其他slave机器不能连接，但是实际上master还运行着</p>
-<p>此时哨兵可能就会认为master宕机了，然后开启选举，将其他slave切换成了master</p>
-<p>这个时候，集群里就会有两个master，也就是所谓的脑裂</p>
-<p>此时虽然某个slave被切换成了master，但是可能client还没来得及切换到新的master，还继续写向旧master的数据可能也丢失了</p>
-<p>因此旧master再次恢复的时候，会被作为一个slave挂到新的master上去，自己的数据会清空，重新从新的master复制数据</p>
-<hr>
-<p>2、解决异步复制和脑裂导致的数据丢失</p>
-<p>min-slaves-to-write 1<br>
-min-slaves-max-lag 10</p>
-<p>要求至少有1个slave，数据复制和同步的延迟不能超过10秒</p>
-<p>如果说一旦所有的slave，数据复制和同步的延迟都超过了10秒钟，那么这个时候，master就不会再接收任何请求了</p>
-<p>上面两个配置可以减少异步复制和脑裂导致的数据丢失</p>
-<p>（1）减少异步复制的数据丢失</p>
-<p>有了min-slaves-max-lag这个配置，就可以确保说，一旦slave复制数据和ack延时太长，就认为可能master宕机后损失的数据太多了，那么就拒绝写请求，这样可以把master宕机时由于部分数据未同步到slave导致的数据丢失降低的可控范围内</p>
-<p>（2）减少脑裂的数据丢失</p>
-<p>如果一个master出现了脑裂，跟其他slave丢了连接，那么上面两个配置可以确保说，如果不能继续给指定数量的slave发送数据，而且slave超过10秒没有给自己ack消息，那么就直接拒绝客户端的写请求</p>
-<p>这样脑裂后的旧master就不会接受client的新数据，也就避免了数据丢失</p>
-<p>上面的配置就确保了，如果跟任何一个slave丢了连接，在10秒后发现没有slave给自己ack，那么就拒绝新的写请求</p>
-<p>因此在脑裂场景下，最多就丢失10秒的数据</p>
-<h2 id="哨兵选举机制">哨兵选举机制</h2>
-<p>1、sdown和odown转换机制</p>
-<p>sdown和odown两种失败状态</p>
-<p>sdown是主观宕机，就一个哨兵如果自己觉得一个master宕机了，那么就是主观宕机</p>
-<p>odown是客观宕机，如果quorum数量的哨兵都觉得一个master宕机了，那么就是客观宕机</p>
-<p>sdown达成的条件很简单，如果一个哨兵ping一个master，超过了is-master-down-after-milliseconds指定的毫秒数之后，就主观认为master宕机</p>
-<p>sdown到odown转换的条件很简单，如果一个哨兵在指定时间内，收到了quorum指定数量的其他哨兵也认为那个master是sdown了，那么就认为是odown了，客观认为master宕机</p>
-<p>2、哨兵集群的自动发现机制</p>
-<p>哨兵互相之间的发现，是通过redis的pub/sub系统实现的，每个哨兵都会往__sentinel__:hello这个channel里发送一个消息，这时候所有其他哨兵都可以消费到这个消息，并感知到其他的哨兵的存在</p>
-<p>每隔两秒钟，每个哨兵都会往自己监控的某个master+slaves对应的__sentinel__:hello channel里发送一个消息，内容是自己的host、ip和runid还有对这个master的监控配置</p>
-<p>每个哨兵也会去监听自己监控的每个master+slaves对应的__sentinel__:hello channel，然后去感知到同样在监听这个master+slaves的其他哨兵的存在</p>
-<p>每个哨兵还会跟其他哨兵交换对master的监控配置，互相进行监控配置的同步</p>
-<p>3、slave配置的自动纠正</p>
-<p>哨兵会负责自动纠正slave的一些配置，比如slave如果要成为潜在的master候选人，哨兵会确保slave在复制现有master的数据; 如果slave连接到了一个错误的master上，比如故障转移之后，那么哨兵会确保它们连接到正确的master上</p>
-<p>4、slave-&gt;master选举算法</p>
-<p>如果一个master被认为odown了，而且majority哨兵都允许了主备切换，那么某个哨兵就会执行主备切换操作，此时首先要选举一个slave来</p>
-<p>会考虑slave的一些信息</p>
-<p>（1）跟master断开连接的时长<br>
-（2）slave优先级<br>
-（3）复制offset<br>
-（4）run id</p>
-<p>如果一个slave跟master断开连接已经超过了down-after-milliseconds的10倍，外加master宕机的时长，那么slave就被认为不适合选举为master</p>
-<p>(down-after-milliseconds * 10) + milliseconds_since_master_is_in_SDOWN_state</p>
-<p>接下来会对slave进行排序</p>
-<p>（1）按照slave优先级进行排序，slave priority越低，优先级就越高<br>
-（2）如果slave priority相同，那么看replica offset，哪个slave复制了越多的数据，offset越靠后，优先级就越高<br>
-（3）如果上面两个条件都相同，那么选择一个run id比较小的那个slave</p>
-<p>5、quorum和majority</p>
-<p>每次一个哨兵要做主备切换，首先需要quorum数量的哨兵认为odown，然后选举出一个哨兵来做切换，这个哨兵还得得到majority哨兵的授权，才能正式执行切换</p>
-<p>如果quorum &lt; majority，比如5个哨兵，majority就是3，quorum设置为2，那么就3个哨兵授权就可以执行切换</p>
-<p>但是如果quorum &gt;= majority，那么必须quorum数量的哨兵都授权，比如5个哨兵，quorum是5，那么必须5个哨兵都同意授权，才能执行切换</p>
-<p>6、configuration epoch</p>
-<p>哨兵会对一套redis master+slave进行监控，有相应的监控的配置</p>
-<p>执行切换的那个哨兵，会从要切换到的新master（salve-&gt;master）那里得到一个configuration epoch，这就是一个version号，每次切换的version号都必须是唯一的</p>
-<p>如果第一个选举出的哨兵切换失败了，那么其他哨兵，会等待failover-timeout时间，然后接替继续执行切换，此时会重新获取一个新的configuration epoch，作为新的version号</p>
-<p>7、configuraiton传播</p>
-<p>哨兵完成切换之后，会在自己本地更新生成最新的master配置，然后同步给其他的哨兵，就是通过之前说的pub/sub消息机制</p>
-<p>这里之前的version号就很重要了，因为各种消息都是通过一个channel去发布和监听的，所以一个哨兵完成一次新的切换之后，新的master配置是跟着新的version号的</p>
-<p>其他的哨兵都是根据版本号的大小来更新自己的master配置的</p>
-<h2 id="分布式数据存储的核心算法，数据分布的算法">分布式数据存储的核心算法，数据分布的算法</h2>
-<p>hash算法 -&gt; 一致性hash算法（memcached） -&gt; redis cluster，hash slot算法</p>
-<p>用不同的算法，就决定了在多个master节点的时候，数据如何分布到这些节点上去，解决这个问题</p>
-<p>1、redis cluster介绍</p>
-<p>redis cluster</p>
-<p>（1）自动将数据进行分片，每个master上放一部分数据<br>
-（2）提供内置的高可用支持，部分master不可用时，还是可以继续工作的</p>
-<p>在redis cluster架构下，每个redis要放开两个端口号，比如一个是6379，另外一个就是加10000的端口号，比如16379</p>
-<p>16379端口号是用来进行节点间通信的，也就是cluster bus的东西，集群总线。cluster bus的通信，用来进行故障检测，配置更新，故障转移授权</p>
-<p>cluster bus用了另外一种二进制的协议，主要用于节点间进行高效的数据交换，占用更少的网络带宽和处理时间</p>
-<p>2、最老土的hash算法和弊端（大量缓存重建）</p>
-<p>3、一致性hash算法（自动缓存迁移）+虚拟节点（自动负载均衡）</p>
-<p>4、redis cluster的hash slot算法</p>
-<p>redis cluster有固定的16384个hash slot，对每个key计算CRC16值，然后对16384取模，可以获取key对应的hash slot</p>
-<p>redis cluster中每个master都会持有部分slot，比如有3个master，那么可能每个master持有5000多个hash slot</p>
-<p>hash slot让node的增加和移除很简单，增加一个master，就将其他master的hash slot移动部分过去，减少一个master，就将它的hash slot移动到其他master上去</p>
-<p>移动hash slot的成本是非常低的</p>
-<p>客户端的api，可以对指定的数据，让他们走同一个hash slot，通过hash tag来实现</p>
-<h2 id="redis和zk分布式锁对比">redis和zk分布式锁对比</h2>
+    <!-- USE SIDEBAR -->
+    <!-- Post Container -->
+    <div class="
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
+      <!-- Main Content -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-0 col-md-10 col-md-offset-1">
+      <!-- 归档列表 -->
 
-        <hr>
-        <!-- Pager -->
-        <ul class="pager">
+      
+
+      <!-- 归档列表 -->
+      
+      <div class="one-tag-list">
+        <span class="fa fa-calendar-times-o listing-seperator" id="2022">
+          <span class="tag-text">2022</span>
+        </span>
+        <ul>
           
-          <li class="previous">
-            <a href="/soft-install/nginx-安装/" data-toggle="tooltip" data-placement="top" title="nginx 安装">&larr; Previous Post</a>
+          <li>
+            11-20
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/idea/idea设置终端为git/" style="color: #0085a1">
+              <span>
+                idea设置终端为git
+                
+                -- idea
+                
+              </span>
+            </a>
           </li>
           
+          <li>
+            11-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/go/go/" style="color: #0085a1">
+              <span>
+                go
+                
+                -- go
+                
+              </span>
+            </a>
+          </li>
           
-          <li class="next">
-            <a href="/cn/review/面试--es/" data-toggle="tooltip" data-placement="top" title="ElasticSearch常见面试题">Next Post &rarr;</a>
+          <li>
+            11-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/review/面试--redis/" style="color: #0085a1">
+              <span>
+                redis面试题
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-19
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/soft-install/nginx-安装/" style="color: #0085a1">
+              <span>
+                nginx 安装
+                
+                -- soft-install
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/review/面试--消息队列/" style="color: #0085a1">
+              <span>
+                消息队列
+                
+                -- cn
+                
+              </span>
+            </a>
+          </li>
+          
+          <li>
+            11-13
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/cn/review/面试--es/" style="color: #0085a1">
+              <span>
+                ElasticSearch常见面试题
+                
+                -- cn
+                
+              </span>
+            </a>
           </li>
           
         </ul>
-
-        
-        <!-- tip start -->
-        <!-- tip -->
-<!-- tip start -->
-<div class="tip">
-  <p>
-    
-      如果您喜欢此博客或发现它对您有用，则欢迎对此发表评论。 也欢迎您共享此博客，以便更多人可以参与。 如果博客中使用的图像侵犯了您的版权，请与作者联系以将其删除。 谢谢 ！
-    
-  </p>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<!-- tip end -->
 
-        <!-- tip end -->
-        
 
-        
-        <!-- Sharing Srtart -->
-        <!-- Social Social Share Post -->
-<!-- Docs:https://github.com/overtrue/share.js -->
+      <!-- 如果开启评论功能 -->
+      
+    </div>
 
-<div class="social-share" data-initialized="true" data-disabled="tencent ,douban ,qzone ,linkedin ,facebook ,google ,diandian" data-wechat-qrcode-helper="" align="center">
-  <ul class="list-inline text-center social-share-ul">
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-twitter">
-        <i class="fa fa-twitter fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a class="social-share-icon icon-wechat">
-        <i class="fa fa-weixin fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-weibo">
-        <i class="fa fa-weibo fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon icon-qq">
-        <i class="fa fa-qq fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
-    <li class="social-share-li">
-      <a target="_blank" class="social-share-icon" href="mailto:?subject=redis面试题&body=Hi,I found this website and thought you might like it http://yoursite-url/cn/review/面试--redis/">
-        <i class="fa fa-envelope fa-1x" aria-hidden="true"></i>
-      </a>
-    </li>
+    <!-- Sidebar Container -->
+<div class="
+    col-lg-3 col-lg-offset-0
+    col-md-3 col-md-offset-0
+    col-sm-12
+    col-xs-12
+    sidebar-container
+">
+    
+        <!-- Visitors -->
+<h5><a href="/">VISITORS</a></h5>
+
+<div class="widget">
+  <span>
+    Viewed <b><i><span id="busuanzi_value_site_pv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Times
+  </span>
+  <br />
+  <span>
+    <b><i><span id="busuanzi_value_site_uv"><i class="fa fa-spinner fa-spin"></i></span></i></b> Visitors In Total
+  </span>
+</div>
+
+
+        <hr>
+    
+        <!-- Featured Tags -->
+
+<section>
+  <h5><a href="/tags/">FEATURED TAGS</a></h5>
+  <div class="tags">
+    
+    
+    <a href="/tags/#go" title="go" rel="1">go</a>
+    
+    
+    
+    <a href="/tags/#基础语法" title="基础语法" rel="1">基础语法</a>
+    
+    
+    
+    <a href="/tags/#nginx" title="nginx" rel="1">nginx</a>
+    
+    
+    
+    <a href="/tags/#mq" title="mq" rel="1">mq</a>
+    
+    
+    
+    <a href="/tags/#redis" title="redis" rel="1">redis</a>
+    
+    
+  </div>
+</section>
+
+
+        <hr>
+    
+        <!-- Short About -->
+<section class="visible-md visible-lg">
+  <h5><a href="/about/">ABOUT ME</a></h5>
+  <div class="short-about">
+
+    
+    <img id="avatar_pic" src="/img/avatar/fatpeople.jpg" alt="avatar_pic" style="box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 5px 5px 10px 5px rgba(0, 0, 0, .5);" />
+    
+
+    
+    <p>Fat people have no future, either thin or die...</p>
+    
+
+    <!-- SNS Link -->
+    <ul class="list-inline">
+      
+
+      
+      <li>
+        <a target="_blank" href="https://github.com/zhaoyaoyuan">
+          <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+          </span>
+        </a>
+      </li>
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+    </ul>
+  </div>
+</section>
+
+        <hr>
+    
+        <!-- RECENT POSTS -->
+
+<h5><a href="/">RECENT POSTS</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="../../idea/idea%E8%AE%BE%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BAgit/">
+      <li>idea设置终端为git</li>
+    </a>
+    
+    <a href="../../go/go/">
+      <li>go</li>
+    </a>
+    
+    <a href="../../soft-install/nginx-%E5%AE%89%E8%A3%85/">
+      <li>nginx 安装</li>
+    </a>
+    
+    <a href="../../cn/review/%E9%9D%A2%E8%AF%95--redis/">
+      <li>redis面试题</li>
+    </a>
+    
+    <a href="../../cn/review/%E9%9D%A2%E8%AF%95--es/">
+      <li>ElasticSearch常见面试题</li>
+    </a>
+    
   </ul>
 </div>
 
-<!-- css & js -->
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/css/share.min.css"> -->
-<script defer="defer" async="true" src="https://cdnjs.cloudflare.com/ajax/libs/social-share.js/1.0.16/js/social-share.min.js"></script>
 
-        <!-- Sharing End -->
-        
         <hr>
-
-        <!-- comments start -->
-        <!-- 1. gitalk comment -->
-
-  <!-- gitalk start -->
-  <!-- Docs:https://github.com/gitalk/gitalk/blob/master/readme-cn.md -->
-
-  <div id="gitalk-container"></div>
-
-  
-    <script src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/zhaoyaoyuan.github.io/js/comment/gitalk.js"></script>
-  
-
-  <script>
-    var gitalk = new Gitalk({
-      clientID: '',
-      clientSecret: '',
-      repo: '',
-      owner: '',
-      admin: '',
-      id: 'Sat Nov 19 2022 13:59:00 GMT+0800', // Ensure uniqueness and length less than 50
-      distractionFreeMode: false, // Facebook-like distraction free mode
-      perPage: 10,
-      pagerDirection: 'last',
-      createIssueManually: false,
-      language: 'en',
-      proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
-    });
-    gitalk.render('gitalk-container');
-
-    var gtFolded = () => {
-      setTimeout(function () {
-        let markdownBody = document.getElementsByClassName("markdown-body");
-        let list = Array.from(markdownBody);
-        list.forEach(item => {
-          if (item.clientHeight > 250) {
-            item.classList.add('gt-comment-body-folded');
-            item.style.maxHeight = '250px';
-            item.title = 'Click to Expand';
-            item.onclick = function () {
-              item.classList.remove('gt-comment-body-folded');
-              item.style.maxHeight = '';
-              item.title = '';
-              item.onclick = null;
-            };
-          }
-        })
-      }, 800);
-    }
-  </script>
-
-  <!-- gitalk end -->
-
-
-<!-- 2. gitment comment -->
-
-
-<!-- 3. disqus comment -->
-
-
-        <!-- comments end -->
-        <hr>
-
-      </div>
-
-      <!-- Catalog: Tabe of Content -->
-      <!-- Table of Contents -->
-
-
-
-      <!-- Sidebar Container -->
-      <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-        <!-- Featured Tags -->
-        
-        <section>
-          <!-- no hr -->
-          <h5>
-            <a href="/tags/">特色标签</a>
-          </h5>
-          <div class="tags">
-            
-            <a class="tag" href="/tags/#redis" title="redis">redis</a>
-            
-          </div>
-        </section>
-        
-
+    
         <!-- Friends Blog -->
-        
-      </div>
-    </div>
+
+
+        <hr>
+    
+        <!-- Archives -->
+
+<h5><a href="/archives/">archives</a></h5>
+<div class="widget">
+  <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="../../archives/2022/11/">November 2022</a><span class="archive-list-count">6</span></li></ul>
+</div>
+
+
+        <hr>
+    
+        <!-- Categories -->
+
+<h5><a href="/categories/">categories</a></h5>
+<div class="widget">
+  <ul>
+    
+    <a href="/categories/#go">
+      <li>go</li>
+    </a>
+    
+    <a href="/categories/#软件安装">
+      <li>软件安装</li>
+    </a>
+    
+    <a href="/categories/#面试">
+      <li>面试</li>
+    </a>
+    
+  </ul>
+</div>
+
+
+        <hr>
+    
+</div>
+
+
+    
   </div>
-</article>
-
-
-
-<!-- anchorjs start -->
-<!-- async load function -->
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script type="text/javascript">
-  // async load function
-  function async (u, c) {
-    var d = document,
-      t = 'script',
-      o = d.createElement(t),
-      s = d.getElementsByTagName(t)[0];
-    o.src = u;
-    if (c) {
-      o.addEventListener('load', function(e) {
-        c(null, e);
-      }, false);
-    }
-    s.parentNode.insertBefore(o, s);
-  };
-</script>
-<script type="text/javascript">
-  //anchor-js, Doc:http://bryanbraun.github.io/anchorjs/
-  async ("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js", function() {
-    anchors.options = {
-      visible: 'hover',
-      placement: 'left',
-      // icon: 'ℬ'
-      icon: '❡'
-    };
-    anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-  });
-</script>
-<style>
-  /* place left on bigger screen */
-  @media all and (min-width: 800px) {
-    .anchorjs-link {
-      position: absolute;
-      left: -0.75em;
-      font-size: 1.1em;
-      margin-top: -0.1em;
-    }
-  }
-</style>
-
-<!-- anchorjs end -->
-
+</div>
 
 
 		<!-- Footer (contains ThemeColor、viewer) -->
@@ -1049,7 +871,7 @@ min-slaves-max-lag 10</p>
     let jsdelivr = "https://cdn.jsdelivr.net/gh/";
     let gh = "zhaoyaoyuan";
     let ghPages = gh + ".github.io";
-    let pagePath = "cn/review/面试--redis/";
+    let pagePath = "tags/基础语法/index.html";
     let jsdelivrurl;
     if (pagePath.indexOf("index.html") != -1) {
       jsdelivrurl = jsdelivr + gh + "/" + ghPages;
@@ -1127,7 +949,7 @@ start: '#bbbbee', end: '#0085a1' } }; $('#tag_cloud a').tagcloud(); }) } </scrip
             <span class="search-icon">
               <i class="fa fa-search fa-lg" style="margin: 25px 10px 25px 20px;"></i>
             </span>
-            <input autocomplete="off" placeholder="搜索..." type="text" id="local-search-input">
+            <input autocomplete="off" placeholder="SEARCH..." type="text" id="local-search-input">
           </div>
         </div>
         <div id="local-search-result"></div>
