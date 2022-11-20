@@ -247,6 +247,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               ABOUT
@@ -261,17 +272,6 @@
             <a href="/categories/">
               
               CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -402,11 +402,11 @@
             <!-- WordCount start -->
             <div class="blank_box"></div>
             <span class="meta">
-              Estimated Reading Time <span class="post-count">6</span> Minutes
+              Estimated Reading Time <span class="post-count">8</span> Minutes
             </span>
             <div class="blank_box"></div>
             <span class="meta">
-              Words <span class="post-count">1.1k</span> In Total
+              Words <span class="post-count">1.4k</span> In Total
             </span>
             <div class="blank_box"></div>
             <!-- WordCount end -->
@@ -469,179 +469,175 @@
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
         <p>打开 setting。</p>
-<img src="images/image-20221120210105641.png" alt="image-20221120210105641" style="zoom:50%;" />
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/idea%E8%AE%BE%E7%BD%AE.png" alt="image-20221120183330215" style="zoom: 50%;" /></p>
 <p>搜索 terminal。</p>
-<img src="images/image-20221120210234279.png" alt="image-20221120210234279" style="zoom:50%;" />
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/202211201835700.png" alt="image-20221120183540626" style="zoom:50%;" /></p>
 <p>修改 shell path 为 git ，选择安装 git 的安装目录下的 bin 目录下的bash.exe 点击 apply。</p>
-<p>例如：D:\Develop\Git\bin\bash.exe -l -l</p>
-<img src="images/image-20221120210328994.png" alt="image-20221120210328994" style="zoom:50%;" />
+<p>例如：D:\Develop\Git\bin\bash.exe -l -l<br><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/202211201837738.png" alt="image-20221120183747651" style="zoom:50%;" /></p>
 <p>注意路径后面的 -l -l，当设置 git 命令别名的时候，加上 -l -l 使得全局生效。</p>
-<p>到用户目录下，新建文件 .bash_profile<br>
-<img src="images/image-20221120210451236.png" alt="image-20221120210451236" style="zoom:50%;" /></p>
+<p>到用户目录下，新建文件 .bash_profile<br><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/202211201842172.png" alt="image-20221120184203117"></p>
 <p>输入下面别名</p>
-<pre><code>alias gs='git status'
-alias gl='git pull'
-alias gp='git push'
-alias gb='git branch'
-alias gm='git merge --no-ff'
-alias gc='git commit'
-alias gpm='git push origin master'
+<pre><code>alias gs=&#39;git status&#39;
+alias gl=&#39;git pull&#39;
+alias gp=&#39;git push&#39;
+alias gb=&#39;git branch&#39;
+alias gm=&#39;git merge --no-ff&#39;
+alias gc=&#39;git commit&#39;
+alias gpm=&#39;git push origin master&#39;
 alias ...=../..
 alias ....=../../..
 alias .....=../../../..
 alias ......=../../../../..
-alias 1='cd -'
-alias 2='cd -2'
-alias 3='cd -3'
-alias 4='cd -4'
-alias 5='cd -5'
-alias 6='cd -6'
-alias 7='cd -7'
-alias 8='cd -8'
-alias 9='cd -9'
+alias 1=&#39;cd -&#39;
+alias 2=&#39;cd -2&#39;
+alias 3=&#39;cd -3&#39;
+alias 4=&#39;cd -4&#39;
+alias 5=&#39;cd -5&#39;
+alias 6=&#39;cd -6&#39;
+alias 7=&#39;cd -7&#39;
+alias 8=&#39;cd -8&#39;
+alias 9=&#39;cd -9&#39;
 alias _=sudo
-alias afind='ack -il'
-alias d='dirs -v | head -10'
+alias afind=&#39;ack -il&#39;
+alias d=&#39;dirs -v | head -10&#39;
 alias g=git
-alias ga='git add'
-alias gaa='git add --all'
-alias gapa='git add --patch'
-alias gau='git add --update'
-alias gb='git branch'
-alias gba='git branch -a'
-alias gbd='git branch -d'
-alias gbda='git branch --no-color --merged | command grep -vE &quot;^(\*|\s*(master|develop|dev)\s*$)&quot; | command xargs -n 1 git branch -d'
-alias gbl='git blame -b -w'
-alias gbnm='git branch --no-merged'
-alias gbr='git branch --remote'
-alias gbs='git bisect'
-alias gbsb='git bisect bad'
-alias gbsg='git bisect good'
-alias gbsr='git bisect reset'
-alias gbss='git bisect start'
-alias gc='git commit -v'
-alias 'gc!'='git commit -v --amend'
-alias gca='git commit -v -a'
-alias 'gca!'='git commit -v -a --amend'
-alias gcam='git commit -a -m'
-alias 'gcan!'='git commit -v -a --no-edit --amend'
-alias 'gcans!'='git commit -v -a -s --no-edit --amend'
-alias gcb='git checkout -b'
-alias gcd='git checkout develop'
-alias gcf='git config --list'
-alias gcl='git clone --recursive'
-alias gclean='git clean -fd'
-alias gcm='git checkout master'
-alias gcmsg='git commit -m'
-alias 'gcn!'='git commit -v --no-edit --amend'
-alias gco='git checkout'
-alias gcount='git shortlog -sn'
-alias gcp='git cherry-pick'
-alias gcpa='git cherry-pick --abort'
-alias gcpc='git cherry-pick --continue'
-alias gcs='git commit -S'
-alias gcsm='git commit -s -m'
-alias gd='git diff'
-alias gdca='git diff --cached'
-alias gdct='git describe --tags `git rev-list --tags --max-count=1`'
-alias gdt='git diff-tree --no-commit-id --name-only -r'
-alias gdw='git diff --word-diff'
-alias gf='git fetch'
-alias gfa='git fetch --all --prune'
-alias gfo='git fetch origin'
-alias gg='git gui citool'
-alias gga='git gui citool --amend'
-alias ggpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
-alias gpod='git pull origin develop'
+alias ga=&#39;git add&#39;
+alias gaa=&#39;git add --all&#39;
+alias gapa=&#39;git add --patch&#39;
+alias gau=&#39;git add --update&#39;
+alias gb=&#39;git branch&#39;
+alias gba=&#39;git branch -a&#39;
+alias gbd=&#39;git branch -d&#39;
+alias gbda=&#39;git branch --no-color --merged | command grep -vE &quot;^(\*|\s*(master|develop|dev)\s*$)&quot; | command xargs -n 1 git branch -d&#39;
+alias gbl=&#39;git blame -b -w&#39;
+alias gbnm=&#39;git branch --no-merged&#39;
+alias gbr=&#39;git branch --remote&#39;
+alias gbs=&#39;git bisect&#39;
+alias gbsb=&#39;git bisect bad&#39;
+alias gbsg=&#39;git bisect good&#39;
+alias gbsr=&#39;git bisect reset&#39;
+alias gbss=&#39;git bisect start&#39;
+alias gc=&#39;git commit -v&#39;
+alias &#39;gc!&#39;=&#39;git commit -v --amend&#39;
+alias gca=&#39;git commit -v -a&#39;
+alias &#39;gca!&#39;=&#39;git commit -v -a --amend&#39;
+alias gcam=&#39;git commit -a -m&#39;
+alias &#39;gcan!&#39;=&#39;git commit -v -a --no-edit --amend&#39;
+alias &#39;gcans!&#39;=&#39;git commit -v -a -s --no-edit --amend&#39;
+alias gcb=&#39;git checkout -b&#39;
+alias gcd=&#39;git checkout develop&#39;
+alias gcf=&#39;git config --list&#39;
+alias gcl=&#39;git clone --recursive&#39;
+alias gclean=&#39;git clean -fd&#39;
+alias gcm=&#39;git checkout master&#39;
+alias gcmsg=&#39;git commit -m&#39;
+alias &#39;gcn!&#39;=&#39;git commit -v --no-edit --amend&#39;
+alias gco=&#39;git checkout&#39;
+alias gcount=&#39;git shortlog -sn&#39;
+alias gcp=&#39;git cherry-pick&#39;
+alias gcpa=&#39;git cherry-pick --abort&#39;
+alias gcpc=&#39;git cherry-pick --continue&#39;
+alias gcs=&#39;git commit -S&#39;
+alias gcsm=&#39;git commit -s -m&#39;
+alias gd=&#39;git diff&#39;
+alias gdca=&#39;git diff --cached&#39;
+alias gdct=&#39;git describe --tags `git rev-list --tags --max-count=1`&#39;
+alias gdt=&#39;git diff-tree --no-commit-id --name-only -r&#39;
+alias gdw=&#39;git diff --word-diff&#39;
+alias gf=&#39;git fetch&#39;
+alias gfa=&#39;git fetch --all --prune&#39;
+alias gfo=&#39;git fetch origin&#39;
+alias gg=&#39;git gui citool&#39;
+alias gga=&#39;git gui citool --amend&#39;
+alias ggpull=&#39;git pull origin $(git rev-parse --abbrev-ref HEAD)&#39;
+alias gpod=&#39;git pull origin develop&#39;
 alias ggpur=ggu
-alias ggpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
-alias ggsup='git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)'
-alias ghh='git help'
-alias gignore='git update-index --assume-unchanged'
-alias gignored='git ls-files -v | grep &quot;^[[:lower:]]&quot;'
-alias git-svn-dcommit-push='git svn dcommit &amp;&amp; git push github master:svntrunk'
-alias gk='\gitk --all --branches'
-alias gke='\gitk --all $(git log -g --pretty=%h)'
-alias glg='git log --stat'
-alias glgg='git log --graph'
-alias glgga='git log --graph --decorate --all'
-alias glgm='git log --graph --max-count=10'
-alias glgp='git log --stat -p'
-alias glo='git log --oneline --decorate'
-alias globurl='noglob urlglobber '
-alias glog='git log --oneline --decorate --graph'
-alias gloga='git log --oneline --decorate --graph --all'
-alias glol='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'\'' --abbrev-commit'
-alias glola='git log --graph --pretty='\''%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'\'' --abbrev-commit --all'
+alias ggpush=&#39;git push origin $(git rev-parse --abbrev-ref HEAD)&#39;
+alias ggsup=&#39;git branch --set-upstream-to=origin/$(git rev-parse --abbrev-ref HEAD)&#39;
+alias ghh=&#39;git help&#39;
+alias gignore=&#39;git update-index --assume-unchanged&#39;
+alias gignored=&#39;git ls-files -v | grep &quot;^[[:lower:]]&quot;&#39;
+alias git-svn-dcommit-push=&#39;git svn dcommit &amp;&amp; git push github master:svntrunk&#39;
+alias gk=&#39;\gitk --all --branches&#39;
+alias gke=&#39;\gitk --all $(git log -g --pretty=%h)&#39;
+alias glg=&#39;git log --stat&#39;
+alias glgg=&#39;git log --graph&#39;
+alias glgga=&#39;git log --graph --decorate --all&#39;
+alias glgm=&#39;git log --graph --max-count=10&#39;
+alias glgp=&#39;git log --stat -p&#39;
+alias glo=&#39;git log --oneline --decorate&#39;
+alias globurl=&#39;noglob urlglobber &#39;
+alias glog=&#39;git log --oneline --decorate --graph&#39;
+alias gloga=&#39;git log --oneline --decorate --graph --all&#39;
+alias glol=&#39;git log --graph --pretty=&#39;\&#39;&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;\&#39;&#39; --abbrev-commit&#39;
+alias glola=&#39;git log --graph --pretty=&#39;\&#39;&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39;\&#39;&#39; --abbrev-commit --all&#39;
 alias glp=_git_log_prettily
-alias glum='git pull upstream master'
-alias gmom='git merge origin/master'
-alias gmt='git mergetool --no-prompt'
-alias gmtvim='git mergetool --no-prompt --tool=vimdiff'
-alias gmum='git merge upstream/master'
-alias gpd='git push --dry-run'
-alias gpoat='git push origin --all &amp;&amp; git push origin --tags'
-alias gpristine='git reset --hard &amp;&amp; git clean -dfx'
-alias gpsup='git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)'
-alias gpu='git push upstream'
-alias gpv='git push -v'
-alias gr='git remote'
-alias gra='git remote add'
-alias grb='git rebase'
-alias grba='git rebase --abort'
-alias grbc='git rebase --continue'
-alias grbi='git rebase -i'
-alias grbm='git rebase master'
-alias grbs='git rebase --skip'
-alias grep='grep  --color=auto --exclude-dir=&#123;.bzr,CVS,.git,.hg,.svn&#125;'
-alias grh='git reset HEAD'
-alias grhh='git reset HEAD --hard'
-alias grmv='git remote rename'
-alias grrm='git remote remove'
-alias grset='git remote set-url'
-alias grt='cd $(git rev-parse --show-toplevel || echo &quot;.&quot;)'
-alias gru='git reset --'
-alias grup='git remote update'
-alias grv='git remote -v'
-alias gsb='git status -sb'
-alias gsd='git svn dcommit'
-alias gsi='git submodule init'
-alias gsps='git show --pretty=short --show-signature'
-alias gsr='git svn rebase'
-alias gss='git status -s'
-alias gsta='git stash save'
-alias gstaa='git stash apply'
-alias gstc='git stash clear'
-alias gstd='git stash drop'
-alias gstl='git stash list'
-alias gstp='git stash pop'
-alias gsts='git stash show --text'
-alias gsu='git submodule update'
-alias gts='git tag -s'
-alias gtv='git tag | sort -V'
-alias gunignore='git update-index --no-assume-unchanged'
-alias gunwip='git log -n 1 | grep -q -c &quot;\-\-wip\-\-&quot; &amp;&amp; git reset HEAD~1'
-alias gup='git pull --rebase'
-alias gupv='git pull --rebase -v'
-alias gwch='git whatchanged -p --abbrev-commit --pretty=medium'
-alias gwip='git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify -m &quot;--wip-- [skip ci]&quot;'
-alias history='fc -l 1'
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
-alias ls='ls --color=tty'
-alias lsa='ls -lah'
-alias md='mkdir -p'
+alias glum=&#39;git pull upstream master&#39;
+alias gmom=&#39;git merge origin/master&#39;
+alias gmt=&#39;git mergetool --no-prompt&#39;
+alias gmtvim=&#39;git mergetool --no-prompt --tool=vimdiff&#39;
+alias gmum=&#39;git merge upstream/master&#39;
+alias gpd=&#39;git push --dry-run&#39;
+alias gpoat=&#39;git push origin --all &amp;&amp; git push origin --tags&#39;
+alias gpristine=&#39;git reset --hard &amp;&amp; git clean -dfx&#39;
+alias gpsup=&#39;git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)&#39;
+alias gpu=&#39;git push upstream&#39;
+alias gpv=&#39;git push -v&#39;
+alias gr=&#39;git remote&#39;
+alias gra=&#39;git remote add&#39;
+alias grb=&#39;git rebase&#39;
+alias grba=&#39;git rebase --abort&#39;
+alias grbc=&#39;git rebase --continue&#39;
+alias grbi=&#39;git rebase -i&#39;
+alias grbm=&#39;git rebase master&#39;
+alias grbs=&#39;git rebase --skip&#39;
+alias grep=&#39;grep  --color=auto --exclude-dir=&#123;.bzr,CVS,.git,.hg,.svn&#125;&#39;
+alias grh=&#39;git reset HEAD&#39;
+alias grhh=&#39;git reset HEAD --hard&#39;
+alias grmv=&#39;git remote rename&#39;
+alias grrm=&#39;git remote remove&#39;
+alias grset=&#39;git remote set-url&#39;
+alias grt=&#39;cd $(git rev-parse --show-toplevel || echo &quot;.&quot;)&#39;
+alias gru=&#39;git reset --&#39;
+alias grup=&#39;git remote update&#39;
+alias grv=&#39;git remote -v&#39;
+alias gsb=&#39;git status -sb&#39;
+alias gsd=&#39;git svn dcommit&#39;
+alias gsi=&#39;git submodule init&#39;
+alias gsps=&#39;git show --pretty=short --show-signature&#39;
+alias gsr=&#39;git svn rebase&#39;
+alias gss=&#39;git status -s&#39;
+alias gsta=&#39;git stash save&#39;
+alias gstaa=&#39;git stash apply&#39;
+alias gstc=&#39;git stash clear&#39;
+alias gstd=&#39;git stash drop&#39;
+alias gstl=&#39;git stash list&#39;
+alias gstp=&#39;git stash pop&#39;
+alias gsts=&#39;git stash show --text&#39;
+alias gsu=&#39;git submodule update&#39;
+alias gts=&#39;git tag -s&#39;
+alias gtv=&#39;git tag | sort -V&#39;
+alias gunignore=&#39;git update-index --no-assume-unchanged&#39;
+alias gunwip=&#39;git log -n 1 | grep -q -c &quot;\-\-wip\-\-&quot; &amp;&amp; git reset HEAD~1&#39;
+alias gup=&#39;git pull --rebase&#39;
+alias gupv=&#39;git pull --rebase -v&#39;
+alias gwch=&#39;git whatchanged -p --abbrev-commit --pretty=medium&#39;
+alias gwip=&#39;git add -A; git rm $(git ls-files --deleted) 2&gt; /dev/null; git commit --no-verify -m &quot;--wip-- [skip ci]&quot;&#39;
+alias history=&#39;fc -l 1&#39;
+alias l=&#39;ls -lah&#39;
+alias la=&#39;ls -lAh&#39;
+alias ll=&#39;ls -lh&#39;
+alias ls=&#39;ls --color=tty&#39;
+alias lsa=&#39;ls -lah&#39;
+alias md=&#39;mkdir -p&#39;
 alias please=sudo
 alias po=popd
 alias pu=pushd
 alias rd=rmdir
 alias which-command=whence
-</code></pre>
-<p>开启 git 命令行窗口，输入 source ./.bash_profile</p>
-<img src="images/image-20221120210534156.png" alt="image-20221120210534156" style="zoom:50%;" />
-<p>测试别名是否生效<br>
-<img src="images/image-20221120210555821.png" alt="image-20221120210555821" style="zoom:80%;" /></p>
+</code></pre><p>开启 git 命令行窗口，输入 source ./.bash_profile</p>
+<p><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/202211201845946.png" alt="image-20221120184523897"></p>
+<p>测试别名是否生效<br><img src="https://cdn.jsdelivr.net/gh/zhaoyaoyuan/jsDeliver/image/202211201846110.png" alt="image-20221120184604076"></p>
 
 
         <hr>

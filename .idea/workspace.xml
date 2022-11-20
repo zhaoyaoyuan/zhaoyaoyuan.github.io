@@ -5,8 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f7ca85-d462-4631-902a-8f829f0415a2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/404.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archive/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives/2022/11/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/2022/11/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives/2022/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/2022/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/archives/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/archives/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/go/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/go/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/软件安装/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/软件安装/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/categories/面试/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/categories/面试/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cn/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/review/面试--es/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cn/review/面试--es/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn/review/面试--redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/cn/review/面试--redis/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/go/go/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/go/go/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/idea/idea设置终端为git/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/idea/idea设置终端为git/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/picgo/PicGo-GitHub-jsDeliver/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/picgo/PicGo-GitHub-jsDeliver/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search.flv" beforeDir="false" afterPath="$PROJECT_DIR$/search.flv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchVersion.json" beforeDir="false" afterPath="$PROJECT_DIR$/searchVersion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/soft-install/nginx-安装/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/soft-install/nginx-安装/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/go/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/go/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/mq/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/mq/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/nginx/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/nginx/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/redis/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/redis/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tags/基础语法/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/tags/基础语法/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="gh-pages" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +73,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "full.screen.before.presentation.mode": "true",
     "node.js.detected.package.eslint": "true",
@@ -90,7 +115,7 @@
       <workItem from="1668918225096" duration="594000" />
       <workItem from="1668918839918" duration="1653000" />
       <workItem from="1668920571181" duration="3600000" />
-      <workItem from="1668950059711" duration="1108000" />
+      <workItem from="1668950059711" duration="1752000" />
     </task>
     <servers />
   </component>

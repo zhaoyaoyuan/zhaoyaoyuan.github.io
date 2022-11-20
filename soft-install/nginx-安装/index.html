@@ -247,6 +247,17 @@
           
           
           <li>
+            <a href="/archive/">
+              
+              ARCHIVES
+              
+              
+            </a>
+          </li>
+          
+          
+          
+          <li>
             <a href="/about/">
               
               ABOUT
@@ -261,17 +272,6 @@
             <a href="/categories/">
               
               CATEGORIES
-              
-              
-            </a>
-          </li>
-          
-          
-          
-          <li>
-            <a href="/archive/">
-              
-              ARCHIVES
               
               
             </a>
@@ -470,7 +470,7 @@
       <!-- Post Container -->
       <div class="col-lg-8 col-lg-offset-1 col-md-10 col-md-offset-1 post-container">
 
-        <p><a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">nginx地址</a></p>
+        <p> <a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">nginx地址</a></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">下载nginx</span></span><br><span class="line">wget https://nginx.org/download/nginx-1.22.1.tar.gz</span><br><span class="line"><span class="meta">#</span><span class="bash"> 解压文件</span></span><br><span class="line">tar -zxvf nginx-1.22.1.tar.gz </span><br><span class="line"><span class="meta">#</span><span class="bash">更换文件夹名称</span></span><br><span class="line">mv nginx-1.22.1 nginx</span><br><span class="line"><span class="meta">#</span><span class="bash">进入nginx</span></span><br><span class="line">cd nginx</span><br><span class="line"><span class="meta">#</span><span class="bash">配置nginx安装路径</span></span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br><span class="line"><span class="meta">#</span><span class="bash">配置时报错：./configure: error: the HTTP rewrite module requires the PCRE library.</span></span><br><span class="line">yum -y install pcre-devel</span><br><span class="line"><span class="meta">#</span><span class="bash">配置时报错：./configure: error: the HTTP gzip module requires the zlib library.</span></span><br><span class="line">yum install -y zlib-devel</span><br><span class="line"><span class="meta">#</span><span class="bash">编译</span></span><br><span class="line">make</span><br><span class="line"><span class="meta">#</span><span class="bash">安装</span></span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
 
         <hr>
