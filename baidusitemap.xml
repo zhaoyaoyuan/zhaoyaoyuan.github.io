@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite-url/picgo/PicGo-GitHub-jsDeliver/</loc>
+    <lastmod>2022-11-20</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite-url/idea/idea%E8%AE%BE%E7%BD%AE%E7%BB%88%E7%AB%AF%E4%B8%BAgit/</loc>
     <lastmod>2022-11-20</lastmod>
   </url>
